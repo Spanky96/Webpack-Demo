@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import "./style/base.css";
 import "./style/common.scss";
 

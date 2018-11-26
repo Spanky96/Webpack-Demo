@@ -81,7 +81,8 @@ const generateConfig = env => {
 
   return {
     entry: {
-      app: "./src/app.js"
+      app: "./src/app.js",
+      head: "./src/head.js"
     },
     output: {
       publicPath: env === "development" ? "/" : __dirname + "/../dist/",
@@ -128,6 +129,9 @@ const generateConfig = env => {
             sourceMap: true,
             usePostCSS: true
           }).scss
+        },{
+          test: /\.(htm|html)$/i,
+          use:['html-withimg-loader'] 
         }
       ]
     },
@@ -137,6 +141,14 @@ const generateConfig = env => {
         filename: "index.html",
         template: path.resolve(__dirname, "..", "index.html"),
         chunks: ["app"],
+        minify: {
+          collapseWhitespace: true
+        }
+      }),
+      new HtmlWebpackPlugin({
+        filename: "head.html",
+        template: path.resolve(__dirname, "..", "head.html"),
+        chunks: ["head"],
         minify: {
           collapseWhitespace: true
         }
