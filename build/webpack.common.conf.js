@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const utils = require('./utils');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const path = require("path");
@@ -16,36 +16,73 @@ const developmentConfig = require("./webpack.dev.conf.js"); // 引入开发环�
 const generateConfig = env => {
   // 将需要的Loader和Plugin单独声明
 
-  let scriptLoader = [
-    {
-      loader: "babel-loader"
-    }
-  ];
+  let scriptLoader = [{
+    loader: "babel-loader"
+  }];
 
-  let cssLoader = [
-    {
-      loader: "css-loader",
+  var cssLoaders = function (options) {
+    options = options || {}
+
+    const cssLoader = {
+      loader: 'css-loader',
       options: {
-        minimize: true,
-        sourceMap: env === "development" ? true : false // 开发环境：开启source-map
+        sourceMap: options.sourceMap
       }
     }
-  ];
 
-  let styleLoader =
-    env === "production"
-      ? ExtractTextPlugin.extract({
+    const postcssLoader = {
+      loader: 'postcss-loader',
+      options: {
+        sourceMap: options.sourceMap
+      }
+    }
+
+    // generate loader string to be used with extract text plugin
+    function generateLoaders(loader, loaderOptions) {
+      var useLoaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader];
+
+      if (loader) {
+        useLoaders.push({
+          loader: loader + '-loader',
+          options: Object.assign({}, loaderOptions, {
+            sourceMap: options.sourceMap
+          })
+        })
+      }
+      // console.log(JSON.stringify(loaders));
+      if (env === "production") {
+        return ExtractTextPlugin.extract({
           // 生产环境：分离、提炼样式文件
           fallback: {
             loader: "style-loader"
           },
-          use: cssLoader
-        })
-      : // 开发环境：页内样式嵌入
-        cssLoader;
+          use: useLoaders
+        });
+      } else {
+        useLoaders.unshift({
+          loader: "style-loader"
+        });
+        return useLoaders;
+      }
+    }
+
+    return {
+      css: generateLoaders(),
+      postcss: generateLoaders(),
+      less: generateLoaders('less'),
+      sass: generateLoaders('sass', {
+        indentedSyntax: true
+      }),
+      scss: generateLoaders('sass'),
+      stylus: generateLoaders('stylus'),
+      styl: generateLoaders('stylus')
+    }
+  }
 
   return {
-    entry: { app: "./src/app.js" },
+    entry: {
+      app: "./src/app.js"
+    },
     output: {
       publicPath: env === "development" ? "/" : __dirname + "/../dist/",
       path: path.resolve(__dirname, "..", "dist"),
@@ -53,9 +90,18 @@ const generateConfig = env => {
       chunkFilename: "[name]-[hash:5].chunk.js"
     },
     module: {
-      rules: [
-        { test: /\.js$/, exclude: /(node_modules)/, use: scriptLoader },
-        { test: /\.css$/, use: styleLoader },
+      rules: [{
+          test: /\.js$/,
+          exclude: /(node_modules)/,
+          use: scriptLoader
+        },
+        {
+          test: /\.css$/,
+          use: cssLoaders({
+            sourceMap: true,
+            usePostCSS: true
+          }).css
+        },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           loader: 'url-loader',
@@ -78,7 +124,10 @@ const generateConfig = env => {
         },
         {
           test: /\.scss$/,
-          loaders: ["style-loader", "css-loader", "sass-loader"]
+          use: cssLoaders({
+            sourceMap: true,
+            usePostCSS: true
+          }).scss
         }
       ]
     },
@@ -92,7 +141,9 @@ const generateConfig = env => {
           collapseWhitespace: true
         }
       }),
-      new webpack.ProvidePlugin({ $: "jquery" })
+      new webpack.ProvidePlugin({
+        $: "jquery"
+      })
     ]
   };
 };

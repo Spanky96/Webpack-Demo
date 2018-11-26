@@ -1,3 +1,8 @@
-html {
+html{
   background-color: green !important;
+}
+
+h2 {
+  display: flex;
+  flex-grow: 1;
 }
