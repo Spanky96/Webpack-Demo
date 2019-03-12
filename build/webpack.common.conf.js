@@ -82,8 +82,8 @@ const generateConfig = env => {
 
   return {
     entry: {
-      app: "./src/app.js",
-      grzx: "./src/grzx.js"
+      app: "./src/vendor/app.js",
+      grzx: "./src/vendor/grzx.js"
     },
     output: {
       publicPath: env === "development" ? "/" : __dirname + "/../dist/",
@@ -132,7 +132,7 @@ const generateConfig = env => {
           }).scss
         },{
           test: /\.(htm|html)$/i,
-          use:['html-withimg-loader'] 
+          use:['html-loader']  // , 'html-withimg-loader'
         }
       ]
     },
@@ -140,7 +140,7 @@ const generateConfig = env => {
       // 开发环境和生产环境二者均需要的插件
       new HtmlWebpackPlugin({
         filename: "app.html",
-        template: path.resolve(__dirname, "..", "app.html"),
+        template: path.resolve(__dirname, "../src", "app.html"),
         chunks: ["app"],
         minify: {
           collapseWhitespace: true
@@ -148,7 +148,7 @@ const generateConfig = env => {
       }),
       new HtmlWebpackPlugin({
         filename: "grzx.html",
-        template: path.resolve(__dirname, "..", "grzx.html"),
+        template: path.resolve(__dirname, "../src", "grzx.html"),
         chunks: ["grzx"],
         minify: {
           collapseWhitespace: true

@@ -1,5 +1,53 @@
-.bottom-menu {
-    display: flex;
-  
-    .item {}
+.fullpage {
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background: url(/static/imgs/bg.png);
+}
+
+.bg {
+  width: 100%;
+  img {
+    width: 100%;
   }
+}
+.func {
+  display: flex;
+  width: 315px;
+  margin: -31px auto 0;
+  justify-content: space-around;
+  .item {
+    width: 25%;
+    .imgbox {
+      text-align: center;
+      img {
+        width: 60px;
+      }
+    }
+    .name {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+}
+.nums {
+  display: flex;
+  width: calc(100% - 20px);
+  margin: 20px auto;
+  justify-content: space-around;
+  .item {
+    flex: 1;
+    .imgbox {
+      text-align: center;
+      img {
+        width: 125px;
+      }
+    }
+    .name {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+}

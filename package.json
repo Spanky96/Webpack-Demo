@@ -1,4 +1,8 @@
-{
+{ 
+  "name": "qiba",
+  "version": "1.0.0",
+  "description": "",
+  "author": "<819062398@qq.com>",
   "scripts": {
     "dev": "webpack-dev-server --env development --config build/webpack.common.conf.js",
     "build": "webpack --env production --config build/webpack.common.conf.js"
