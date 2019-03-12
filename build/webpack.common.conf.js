@@ -3,6 +3,7 @@ const merge = require("webpack-merge");
 const utils = require('./utils');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const path = require("path");
 
@@ -82,13 +83,13 @@ const generateConfig = env => {
   return {
     entry: {
       app: "./src/app.js",
-      head: "./src/head.js"
+      grzx: "./src/grzx.js"
     },
     output: {
       publicPath: env === "development" ? "/" : __dirname + "/../dist/",
       path: path.resolve(__dirname, "..", "dist"),
-      filename: "[name]-[hash:5].bundle.js",
-      chunkFilename: "[name]-[hash:5].chunk.js"
+      filename: "./js/[name].bundle.js",
+      chunkFilename: "./js/[name].chunk.js"
     },
     module: {
       rules: [{
@@ -138,21 +139,28 @@ const generateConfig = env => {
     plugins: [
       // 开发环境和生产环境二者均需要的插件
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.resolve(__dirname, "..", "index.html"),
+        filename: "app.html",
+        template: path.resolve(__dirname, "..", "app.html"),
         chunks: ["app"],
         minify: {
           collapseWhitespace: true
         }
       }),
       new HtmlWebpackPlugin({
-        filename: "head.html",
-        template: path.resolve(__dirname, "..", "head.html"),
-        chunks: ["head"],
+        filename: "grzx.html",
+        template: path.resolve(__dirname, "..", "grzx.html"),
+        chunks: ["grzx"],
         minify: {
           collapseWhitespace: true
         }
       }),
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: 'static',
+          ignore: ['.*']
+        }
+      ]),
       new webpack.ProvidePlugin({
         $: "jquery"
       })

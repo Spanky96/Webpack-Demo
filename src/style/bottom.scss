@@ -1,0 +1,37 @@
+.bottom-menu {
+  display: flex;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ccd4e0;
+  .item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-content: space-around;
+    max-width: 25%;
+    .iconbox {
+      width: 100%;
+      img {
+        width: 25px;
+        margin: 0 auto;
+        display: block;
+      }
+      &.is-active {
+        display: none;
+      }
+    }
+    &.active {
+      color: #bc0c0c;
+      .iconbox.in-active {
+        display: none;
+      }
+      .iconbox.is-active {
+        display: block;
+      }
+    }
+  }
+}
