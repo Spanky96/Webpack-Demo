@@ -12,6 +12,7 @@ module.exports = {
     port: 8888,
     hot: true,
     overlay: true,
+    host: '0.0.0.0',
     proxy: {
       '/api': { 
         target: 'http://132.232.90.132:8081/', //源地址 

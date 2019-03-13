@@ -1,5 +1,3 @@
-import "../style/bottom.scss";
-
 const menus = [{
   name: '首页',
   icon: 'app',

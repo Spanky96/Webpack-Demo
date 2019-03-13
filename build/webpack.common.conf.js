@@ -83,10 +83,10 @@ const generateConfig = env => {
   return {
     entry: {
       app: "./src/vendor/app.js",
-      grzx: "./src/vendor/grzx.js"
+      bottom: "./src/vendor/bottom.js"
     },
     output: {
-      publicPath: env === "development" ? "/" : __dirname + "/../dist/",
+      publicPath: env === "development" ? "/" : "./",
       path: path.resolve(__dirname, "..", "dist"),
       filename: "./js/[name].bundle.js",
       chunkFilename: "./js/[name].chunk.js"
@@ -141,18 +141,33 @@ const generateConfig = env => {
       new HtmlWebpackPlugin({
         filename: "app.html",
         template: path.resolve(__dirname, "../src", "app.html"),
-        chunks: ["app"],
-        minify: {
-          collapseWhitespace: true
-        }
+        chunks: ["app", "bottom"],
+        // minify: {
+        //   collapseWhitespace: true
+        // }
       }),
       new HtmlWebpackPlugin({
         filename: "grzx.html",
         template: path.resolve(__dirname, "../src", "grzx.html"),
-        chunks: ["grzx"],
-        minify: {
-          collapseWhitespace: true
-        }
+        chunks: ["app", "bottom"],
+        // minify: {
+        //   collapseWhitespace: true
+        // }
+      }),
+      new HtmlWebpackPlugin({
+        filename: "tzgg.html",
+        template: path.resolve(__dirname, "../src", "tzgg.html"),
+        chunks: ["app", "bottom"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "zyph.html",
+        template: path.resolve(__dirname, "../src", "zyph.html"),
+        chunks: ["app", "bottom"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "register.html",
+        template: path.resolve(__dirname, "../src", "register.html"),
+        chunks: ["app"]
       }),
       new CopyWebpackPlugin([
         {

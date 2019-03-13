@@ -1,3 +1,3 @@
 import "../style/reset.css";
-import "../style/common.scss";
+import "../style/style.scss";
 import "./bottom.js";
