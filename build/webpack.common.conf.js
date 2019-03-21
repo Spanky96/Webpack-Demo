@@ -147,6 +147,14 @@ const generateConfig = env => {
         // }
       }),
       new HtmlWebpackPlugin({
+        filename: "hdzm.html",
+        template: path.resolve(__dirname, "../src", "hdzm.html"),
+        chunks: ["app", "bottom"],
+        // minify: {
+        //   collapseWhitespace: true
+        // }
+      }),
+      new HtmlWebpackPlugin({
         filename: "grzx.html",
         template: path.resolve(__dirname, "../src", "grzx.html"),
         chunks: ["app", "bottom"],
@@ -162,6 +170,11 @@ const generateConfig = env => {
       new HtmlWebpackPlugin({
         filename: "zyph.html",
         template: path.resolve(__dirname, "../src", "zyph.html"),
+        chunks: ["app", "bottom"]
+      }),
+      new HtmlWebpackPlugin({
+        filename: "jfdh.html",
+        template: path.resolve(__dirname, "../src", "jfdh.html"),
         chunks: ["app", "bottom"]
       }),
       new HtmlWebpackPlugin({

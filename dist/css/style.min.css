@@ -302,3 +302,169 @@ html { overflow-y: scroll; }@charset "UTF-8";
           display: none; }
 #registerPage .items .item .right-b select .option {
           background-color: white; }
+.girftbox::before {
+  content: ' ';
+  background-image: url(http://localhost:8888/static/imgs/8.png);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  background-size: 100%;
+  position: absolute; }
+.hdzmbox {
+  margin: 10px;
+  overflow: hidden;
+  position: relative; }
+.hdzmbox > div {
+    margin: 1px;
+    border: 1px solid #e1e2e4;
+    background: white; }
+.hdzmbox > div .title {
+      color: #515253;
+      font-size: 16px;
+      margin: 10px 50px;
+      text-align: center;
+      line-height: 24px; }
+.hdzmbox > div .infos-grey {
+      background: #edeeee;
+      margin: 0 10px;
+      padding: 10px 10px 0 10px; }
+.hdzmbox > div .infos-grey .item .k {
+        font-size: 16px;
+        padding-bottom: 10px;
+        color: #e42829; }
+.hdzmbox > div .infos-grey .item .v {
+        color: #5a5b5c;
+        padding-bottom: 10px; }
+.hdzmbox > div .infos-inline {
+      margin: 10px;
+      padding: 10px 10px 0 10px; }
+.hdzmbox > div .infos-inline .item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 16px;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: start;
+        color: #78797a;
+        margin-bottom: 10px;
+        line-height: 20px; }
+.hdzmbox > div .infos-inline .item .k {
+          width: 100px; }
+.xqbox2 {
+  margin: 10px;
+  border: 1px solid #e1e2e4;
+  background: white; }
+.xqbox2 .header {
+    border-bottom: 2px solid #e1e2e4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+.xqbox2 .header .title {
+      font-size: 14px; }
+.xqbox2 .header .extra-num {
+      color: blue; }
+.xqbox2 .mainp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 10px 20px; }
+.xqbox2 .mainp .item {
+      margin: 10px 10px; }
+.xqbox2 .mainp .item img {
+        width: 45px;
+        height: 45px; }
+.xqbox2 .mainp .item .name {
+        font-size: 12px;
+        text-align: center;
+        padding: 5px 0; }
+.btn32 {
+  border-radius: 20px;
+  height: 38px;
+  width: 168px;
+  font-size: 18px;
+  color: white;
+  margin: 10px auto;
+  line-height: 38px;
+  text-align: center;
+  border-bottom: 2px solid #cd3a00;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7ce85), to(#fa7340));
+  background: linear-gradient(to bottom, #f7ce85, #fa7340);
+  background: -moz-linear-gradient(to right, #f7ce85, #fa7340);
+  font-weight: bold; }
+.jfdhtop {
+  background: url(/static/imgs/jfdh.png);
+  height: 90px;
+  background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+.jfdhtop .currentjf {
+    color: white;
+    background: #9b0403;
+    margin: 30px auto;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    width: 160px;
+    text-align: center; }
+.jfhdList {
+  margin-top: 90px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  min-height: calc(100vh - 140px); }
+.jfhdList .lists {
+    margin: 20px 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+.jfhdList .lists .item {
+      width: 160px; }
+.jfhdList .lists .item .yl {
+        background: white;
+        width: 100%;
+        height: 155px;
+        -webkit-box-shadow: #0005 0px 0px 10px;
+                box-shadow: #0005 0px 0px 10px;
+        margin-bottom: 15px;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        padding: 20px 0; }
+.jfhdList .lists .item .yl .photo img {
+          width: 70px;
+          height: 75px; }
+.jfhdList .lists .item .yl .name .num {
+          color: #e7b300; }
+.jfhdList .lists .item .yl .jf {
+          color: #fa2b20; }
+.jfhdList .lists .item .dhbtn {
+        border-radius: 9px;
+        height: 28px;
+        width: 128px;
+        font-size: 14px;
+        color: white;
+        margin: 10px auto;
+        line-height: 28px;
+        text-align: center;
+        background: #f29901; }
