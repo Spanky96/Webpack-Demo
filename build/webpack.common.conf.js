@@ -82,8 +82,7 @@ const generateConfig = env => {
 
   return {
     entry: {
-      app: "./src/vendor/app.js",
-      bottom: "./src/vendor/bottom.js"
+      time: "./src/vendor/time.js",
     },
     output: {
       publicPath: env === "development" ? "/" : "./",
@@ -139,35 +138,12 @@ const generateConfig = env => {
     plugins: [
       // 开发环境和生产环境二者均需要的插件
       new HtmlWebpackPlugin({
-        filename: "app.html",
-        template: path.resolve(__dirname, "../src", "app.html"),
-        chunks: ["app", "bottom"],
-        // minify: {
-        //   collapseWhitespace: true
-        // }
-      }),
-      new HtmlWebpackPlugin({
-        filename: "grzx.html",
-        template: path.resolve(__dirname, "../src", "grzx.html"),
-        chunks: ["app", "bottom"],
-        // minify: {
-        //   collapseWhitespace: true
-        // }
-      }),
-      new HtmlWebpackPlugin({
-        filename: "tzgg.html",
-        template: path.resolve(__dirname, "../src", "tzgg.html"),
-        chunks: ["app", "bottom"]
-      }),
-      new HtmlWebpackPlugin({
-        filename: "zyph.html",
-        template: path.resolve(__dirname, "../src", "zyph.html"),
-        chunks: ["app", "bottom"]
-      }),
-      new HtmlWebpackPlugin({
-        filename: "register.html",
-        template: path.resolve(__dirname, "../src", "register.html"),
-        chunks: ["app"]
+        filename: "time.html",
+        template: path.resolve(__dirname, "../src", "time.html"),
+        chunks: ["time"],
+        minify: {
+          collapseWhitespace: true
+        }
       }),
       new CopyWebpackPlugin([
         {
