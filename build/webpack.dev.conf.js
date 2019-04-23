@@ -34,7 +34,7 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
-        messages: ['[Spanky96] Web项目已启动'],
+        messages: [`Your application is running here: http://localhost:8888`],
       },
       onErrors: utils.createNotifierCallback()
     })

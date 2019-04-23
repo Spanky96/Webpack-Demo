@@ -3,12 +3,13 @@ const merge = require("webpack-merge");
 const utils = require('./utils');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const path = require("path");
 
 const productionConfig = require("./webpack.prod.conf.js"); // 引入生产环境配置文件
 const developmentConfig = require("./webpack.dev.conf.js"); // 引入开发环境配置文件
-
+var fs = require('fs');
 /**
  * 根据不同的环境，生成不同的配置
  * @param {String} env "development" or "production"
@@ -79,16 +80,17 @@ const generateConfig = env => {
     }
   }
 
+  var entrys = {};
+  fs.readdirSync('./src/pages').forEach((n) => {
+    entrys[n] = `./src/pages/${n}/${n}.js`;
+  });
   return {
-    entry: {
-      app: "./src/app.js",
-      head: "./src/head.js"
-    },
+    entry: entrys,
     output: {
       publicPath: env === "development" ? "/" : __dirname + "/../dist/",
       path: path.resolve(__dirname, "..", "dist"),
-      filename: "[name]-[hash:5].bundle.js",
-      chunkFilename: "[name]-[hash:5].chunk.js"
+      filename: "./js/[name].bundle.js",
+      chunkFilename: "./js/[name].chunk.js"
     },
     module: {
       rules: [{
@@ -131,28 +133,34 @@ const generateConfig = env => {
           }).scss
         },{
           test: /\.(htm|html)$/i,
-          use:['html-withimg-loader'] 
+          use:['html-loader'] 
         }
       ]
     },
+    resolve: {
+      alias: {
+        '@assets': path.resolve(__dirname, '../src/assets')
+      }
+    },
     plugins: [
       // 开发环境和生产环境二者均需要的插件
-      new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.resolve(__dirname, "..", "index.html"),
-        chunks: ["app"],
-        minify: {
-          collapseWhitespace: true
-        }
+      ...Object.keys(entrys).map((n) => {
+        return new HtmlWebpackPlugin({
+            filename: n + ".html",
+            template: path.resolve(__dirname, "../src/pages/" + n, n + ".html"),
+            chunks: [n],
+            minify: {
+              collapseWhitespace: true
+            }
+          });
       }),
-      new HtmlWebpackPlugin({
-        filename: "head.html",
-        template: path.resolve(__dirname, "..", "head.html"),
-        chunks: ["head"],
-        minify: {
-          collapseWhitespace: true
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, '../static'),
+          to: 'static',
+          ignore: ['.*']
         }
-      }),
+      ]),
       new webpack.ProvidePlugin({
         $: "jquery"
       })
