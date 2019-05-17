@@ -28,3 +28,5 @@ npm run build --report
 > 3. Vue精简风格的控制台           Done
 > 4. Eslint                      In processing
 -----
+
+node ./node_modules/uglify-js/bin/uglifyjs ./static/js/jquerys.js ./static/js/jquery.sticky.js ./static/js/imagesloaded.pkgd.js ./static/js/jquery.fitvids.js ./static/js/jquery.smartmenus.min.js ./static/js/isotope.pkgd.js ./static/js/jquery.easing.1.3.js ./static/js/jquery.prettyPhoto.js ./static/js/countUp.min.js ./static/js/slick.min.js ./static/js/main.js ./static/js/superfish.js ./static/js/jquery.fitvidss.js ./static/js/custom.js ./static/js/modernizr.js -o all.min.js
