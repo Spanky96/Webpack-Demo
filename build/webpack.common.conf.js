@@ -87,7 +87,7 @@ const generateConfig = env => {
   return {
     entry: entrys,
     output: {
-      publicPath: env === "development" ? "/" : __dirname + "/../dist/",
+      publicPath: env === "development" ? "/" : "",
       path: path.resolve(__dirname, "..", "dist"),
       filename: "./js/[name].bundle.js",
       chunkFilename: "./js/[name].chunk.js"
