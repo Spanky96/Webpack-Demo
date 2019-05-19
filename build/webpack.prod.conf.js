@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
   plugins: [
     new ExtractTextPlugin({
-      filename: "./css/[name].min.css",
+      filename: "./css/style.min.css",
       allChunks: false // 只包括初始化css, 不包括异步加载的CSS
     }),
     new CleanWebpackPlugin(["dist"], {

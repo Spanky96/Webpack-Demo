@@ -37,6 +37,8 @@
 
 @import "css/style.css";
 
+@import "css/timeline.css";
+
 /* ===================================
     1. Global CSS
 ====================================== */
@@ -190,10 +192,17 @@ body {
 }
 
 #toggle {
+  .account-dialog {
+    width: 300px;
+    top: 150px;
+    .triangle {
+      right: 95px;
+    }
+  }
   &:hover {
     cursor: pointer;
   }
-  div {
+  .menu {
     height: 3px;
     margin-bottom: 6px;
     background-color: #fff;
@@ -221,6 +230,69 @@ body {
 #header-main-menu {
   display: inline-block;
 }
+#accountDialog {
+  position: absolute;
+  width: 340px;
+  background: white;
+  top: 63px;
+  right: 5px;
+  padding: 15px 20px;
+  box-shadow: 1px 1px 6px #0000006e;
+  transition: all .2s linear;
+  opacity: 1;
+  &.hide {
+    opacity: 0;
+    display: none;
+  }
+  .triangle{
+    width: 0;
+    height: 0;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #999;
+    margin: -25px auto;
+    position: absolute;
+    right: 30px;
+    span{
+      display: block;
+      width: 0;
+      height: 0;
+      border-width: 0 9px 9px;
+      border-style: solid;
+      border-color: transparent transparent #fff;
+      position: absolute;
+      top: 1px;
+      left: -9px;
+    }
+  }
+  .title {
+    color: #E625A4;
+    font-size: 16px;
+  }
+  input {
+    height: 32px;
+    background: #E6E6E6;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    text-indent: 15px;
+    font-size: 15px;
+  }
+  .lybutton {
+    padding: 8px 12px;
+    display: inline-block;
+    color: #fff !important;
+    background-color: #e625a4;
+    text-align: left;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+    border-radius: 8px !important;
+    box-shadow: 0px 0px 50px 0px rgba(230, 37, 164, 0.65);
+  }
+}
 
 .sm-clean .has-submenu {
   padding-right: 35px !important;
@@ -232,6 +304,11 @@ body .site-wrapper .sm-clean a {
 }
 
 .sm-clean {
+  #in18Toggle {
+    display: flex;
+    width: 180px;
+    margin: 0 auto;
+  }
   a {
     span.sub-arrow {
       right: 3px;
@@ -342,7 +419,7 @@ a.button2 {
   padding: 8px 20px;
   margin-left: 15px;
   display: inline-block;
-  background: url(http://localhost:8888/static/imgs/button.png);
+  background: url(/static/imgs/button.png);
   color: white;
   text-align: left;
   cursor: pointer;
@@ -384,7 +461,7 @@ a.button2 {
     font-size: 140px;
     line-height: 100%;
     font-weight: 700;
-    color: #e625a4;
+    color: #F7D3F1;
   }
 }
 
@@ -695,7 +772,7 @@ a.button2 {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-attachment: scroll;
-  padding-bottom: 80px;
+  padding-bottom: 120px;
   border: 0px;
 }
 
@@ -1313,13 +1390,33 @@ a.video-popup-holder:hover .popup-play {
 ====================================== */
 .section5 {
   overflow: hidden;
-  .big-number {
-    
+  .text-slide {
+    .text-slide-content {
+      margin-bottom: 10px;
+      line-height: 40px;
+    }
+    .text-slide-extra {
+      color: #E25FB7;
+    }
+  }
+}
+.section6 {
+  .small-text {
+    p {
+      width: 46%;
+      margin: 0 auto;
+      line-height: 18px;
+      min-width: 300px;
+    }
+  }
+  .member-img {
+    width: 190px;
+    height: 190px;
   }
 }
 #clients {
   background-color: #f3f1f6;
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .big-number-full-width {
@@ -1368,9 +1465,8 @@ span.up-text {
 /* ===================================
     7. Team Section CSS
 ====================================== */
-
 #team {
-  background-image: url(/static/images/team_bg.jpg);
+  background-image: url(/static/imgs/animal.png);
   background-color: #efefef;
   background-position: left top;
   background-repeat: repeat;
@@ -1380,10 +1476,6 @@ span.up-text {
 
 .member {
   text-align: center;
-}
-
-img.member-img {
-  border-radius: 90%;
 }
 
 .member {
@@ -1431,7 +1523,67 @@ body .social a {
 /* ===================================
     8. Pricing Section CSS
 ====================================== */
-
+.section7 {
+  @media screen and (min-width: 1000px) {
+    .main-part {
+      display: flex;
+      .mobile-only {
+        display: none;
+      }
+    }
+    .left-part {
+      width: 29%;
+      .group {
+        .title {
+          text-align: right;
+        }
+        .context {
+          text-align: right;
+          margin-left: 30%;
+        }
+      }
+    }
+    .right-part {
+      width: 29%;
+      .group {
+        .title {
+          text-align: left;
+        }
+        .context {
+          text-align: left;
+          margin-right: 30%;
+        }
+        img {
+          display: block;
+        }
+        
+      }
+    }
+    .main-center {
+      width: 42%;
+    }
+  }
+  @media screen and (max-width: 999px) {
+    .mobile-only {
+      display: block !important;
+      margin-bottom: 40px;
+    }
+    .group {
+      margin-bottom: 40px !important;
+    }
+    .main-center {
+      display: none;
+    }
+  }
+  .group {
+    margin-bottom: 100px;
+    .title {
+      font-size: 22px;
+      color: #E625A4;
+      margin-bottom: 20px;
+    }
+  }
+}
 #pricing {
   background-color: #f3f1f6;
 }
@@ -1439,10 +1591,7 @@ body .social a {
 .pricing-table {
   text-align: center;
   padding-bottom: 20px;
-  border-radius: 50px;
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px 3px #ede9f3;
 }
 
 .pricing-table-title {
@@ -1492,7 +1641,10 @@ body .social a {
 /* ===================================
     9. News Section CSS
 ====================================== */
-
+.section8 {
+  background: url(/static/imgs/map.png);
+  background-size: 100% auto;
+}
 .blog-item-holder {
   text-align: center;
   padding: 30px 0;
@@ -1602,7 +1754,69 @@ body .social a {
 /* ===================================
     9.1 Single Post CSS
 ====================================== */
+.section9 {
+  background: url(/static/imgs/btmbg.png);
+  background-color: #EFEDF4;
+  background-position: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  .logos {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    .url {
+      color: #E841AF;
+      margin: -15px 0 10px;
+    }
+    .copyright {
+      font-size: 14px;
+    }
+  }
+  .coming-soon {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 5%;
+    .qr {
+      min-width: 125px;
+      margin-left: 40px;
+    }
+    .top {
+      font-size: 24px;
+      text-align: right;
+    }
+    .btm {
+      font-size: 120px;
+      color: #ffffff87;
+      line-height: 100px;
+      font-weight: 100;
+      font-family: initial;
+      letter-spacing: 6px;
+      text-align: right;
+      margin-right: -20px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .coming-soon {
+      .qr {
+        margin-left: 10px;
+      }
+      .text-left {
+        .top {
+          font-size: 16px;
+          text-align: right;
+        }
+        .btm {
+          font-size: 50px;
+          color: #ffffff87;
+          line-height: 50px;
+          margin-right: -7px;
+          width: 300px;
+        }
+      }
+    }
+  }
 
+}
 .single {
   .site-content {
     background-color: #fff;
@@ -1818,14 +2032,6 @@ body .social a {
     10. Contact Section CSS
 ====================================== */
 
-#contact {
-  background-image: url(/static/images/map_img.jpg);
-  background-color: #f3f1f6;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
 .contact-page-wrapper {
   max-width: 1070px;
   margin: 0 auto;
@@ -1841,7 +2047,6 @@ body .social a {
   padding: 100px 70px;
   color: #fff;
   position: absolute;
-  border-radius: 50px 0 0 50px;
 }
 
 .contact-page-right {
@@ -1849,7 +2054,6 @@ body .social a {
   height: calc(100% - 200px);
   float: right;
   padding: 100px 70px;
-  border-radius: 0 50px 50px 0;
   background-color: #fff;
 }
 
@@ -2196,6 +2400,10 @@ li {
   .sm-clean {
     li {
       margin: 0 auto !important;
+      width: 100%;
+      .layui-form-switch {
+        margin-top: 7px;
+      }
     }
     a.has-submenu {
       display: inline-block;
@@ -2266,14 +2474,12 @@ li {
     width: 80%;
     height: auto;
     padding: 10% 10% 3% 10%;
-    border-radius: 50px 50px 0 0;
     text-align: center;
   }
   .contact-page-right {
     float: none;
     width: 80%;
     height: auto;
-    border-radius: 0 0 50px 50px;
     padding: 10%;
   }
   .single h1.entry-title {
@@ -2509,5 +2715,245 @@ li {
   .contact-info-content {
     display: block;
     text-align: center;
+  }
+}
+
+
+// layui
+.layui-form-switch {
+  position: relative;
+  height: 26px;
+  line-height: 25px;
+  min-width: 46px;
+  padding: 0 5px;
+  margin-top: 11px;
+  border: 1px solid #C835A1;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
+  display: inline-block;
+  vertical-align: middle;
+  i {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #d2d2d2;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+  }
+}
+
+.layui-form-onswitch {
+  i {
+    position: absolute;
+    left: 32px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+    background-color: #C835A1;
+    -webkit-transition: .1s linear;
+    transition: .1s linear;
+  }
+}
+
+#accountPage {
+  height: calc(100vh - 78px);
+  position: relative;
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 150px);
+    width: 100%;
+    background: #8457ab;
+    background: linear-gradient(180deg, #8457ab 0%, #ef7fbd 50%, #f6bca4 100%);
+    z-index: 1;
+    box-shadow: 0 1px 3px 1px #f6bca4;
+    .main-info {
+      margin: 50px auto;
+      text-align: center;
+      .avatar {
+        width: 70px;
+        height: 70px;
+        margin: 5px auto;
+        img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+      }
+      .id {
+        background: #fff;
+        color: #FE699B;
+        padding: 0px 8px;
+        display: inline-block;
+        border-radius: 10px;
+      }
+      .balance {
+        color: white;
+        font-size: 50px;
+        line-height: 80px;
+        font-family: initial;
+        span {
+          font-weight: bold;
+          letter-spacing: 5px;
+        }
+      }
+      .flex {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        margin-top: 20px;
+        .item {
+          .num {
+            font-size: 26px;
+            line-height: 50px;
+          }
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 475px) {
+    .sky .main-info {
+      margin: 20px auto;
+      .balance {
+        color: white;
+        font-size: 30px;
+        line-height: 50px;
+        font-family: initial;
+      }
+      .flex {
+        margin-top: 0px;
+      }
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .cube {
+      zoom: 0.8;
+      bottom: 80px !important;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .cube {
+      zoom: 0.6;
+      bottom: 80px !important;
+    }
+  }
+  .cube{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 108px;
+    left: 50%;
+    margin-left: -75px;
+    
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateY(0deg) translateZ(-200px);
+    
+    -webkit-animation-name: rotationMainContainer;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+  }
+  
+  .cube-face{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    opacity: .95;
+    background: #ff033e;
+    
+    -webkit-transform-origin: 50% 50%;
+    
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+  }
+  
+  .cube-face-front{
+    -webkit-transform: translateZ(75px);
+    -webkit-animation-name: bgCAFace;
+  }
+  
+  .cube-face-left{
+    -webkit-transform: rotateY(90deg) translateZ(75px);
+    -webkit-animation-name: bgCALeft;
+  }
+  
+  .cube-face-back{
+    -webkit-transform: translateZ(-75px);
+    -webkit-animation-name: bgCABack;
+  }
+  
+  .cube-face-right{
+    -webkit-transform: rotateY(90deg) translateZ(-75px);
+    -webkit-animation-name: bgCARight;
+  }
+  
+  .cube-face-top{
+    -webkit-transform: rotateX(90deg) translateZ(-75px);
+    -webkit-animation-name: bgCATopBottom;
+  }
+  
+  .cube-face-bottom{
+    -webkit-transform: rotateX(90deg) translateZ(75px);
+    -webkit-animation-name: bgCATopBottom;
+  }
+  
+  @-webkit-keyframes rotationMainContainer{
+    0%   { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg) }
+  }
+  
+  @-webkit-keyframes bgCAFace{
+    0%   { background: #7F1041; }
+    25%  { background: #FF6DAD; }
+    50%  { background: #FF2182; }
+    100% { background: #7F3756; }
+  }
+  
+  @-webkit-keyframes bgCALeft{
+    0% { background: #7F3756; }
+    25%   { background: #7F1041; }
+    50%  { background: #FF6DAD; }
+    100%  { background: #FF2182; }
+  }
+  
+  @-webkit-keyframes bgCABack{
+    0%  { background: #FF2182; }
+    25% { background: #7F3756; }
+    50%   { background: #7F1041; }
+    100%  { background: #FF6DAD; }
+  }
+  
+  @-webkit-keyframes bgCARight{
+    0%  { background: #FF6DAD; }
+    25%  { background: #FF2182; }
+    50% { background: #7F3756; }
+    100%   { background: #7F1041; }
+  }
+  
+  @-webkit-keyframes bgCATopBottom{
+    0%  { background: #7F0E2D; }
+    25%  { background: #FF6891; }
+    50% { background: #FF1C5A; }
+    100%   { background: #7F3449; }
+  }
+  canvas {
+    width: 100vw;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
   }
 }

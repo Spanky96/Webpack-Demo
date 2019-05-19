@@ -1,5 +1,6 @@
 import '@assets/style.scss';
 import $ from 'jQuery';
+const in18 = require('../../language.js');
 
 Date.prototype.Format = function (fmt) {
   var o = {
@@ -40,6 +41,16 @@ function updateTimer() {
   var time = new Date().Format('hh:mm:ss');
   $('#lyTimer').text(time);
 }
+// 语言切换
+global.toggleLanguage = function (el) {
+  var active = $(el).hasClass('layui-form-onswitch');
+  $(el).toggleClass('layui-form-onswitch');
+  var language = in18[active ? 1 : 0]
+  var keys = Object.keys(language);
+  keys.forEach(function (n) {
+    $(`[in18=${n}]`).text(language[n]);
+  });
+}
 $(function(){
   if (!browserRedirect()) {
     // 如果是电脑端
@@ -47,6 +58,66 @@ $(function(){
     $('#video').show();
     $('#videoImg').hide();
   }
+
+  // 适配移动端 复制一个dialog
+  var dialog = $('.account-dialog');
+  var cloneDialog = $('.account-dialog').clone();
+
+  $('#toggle').prepend(cloneDialog);
+  
+  var hideDialog = function (ele) {
+    $('.account-dialog').addClass('hide');
+  }
+  // header
+  $('.account-dialog').click(function (event) {
+    event.stopPropagation();
+  });
+  $('#accountQuick').click(function () {
+    var dialog;
+    if (window.innerWidth < 1020) {
+      dialog = $('#toggle .account-dialog');
+    } else {
+      dialog = $('#header-main-menu .account-dialog');
+    }
+
+    if (dialog.hasClass('hide')) {
+      dialog.removeClass('hide');
+      window.addEventListener('click', hideDialog);
+      return false;
+    } else {
+      hideDialog();
+      window.removeEventListener('click', hideDialog);
+    }
+  });
+
+
+
+  // section5 时间刷新
   setInterval(updateTimer, 1000);
+
+  // section7 手机在手机端显示在第一个
+  var dom = $('.section7 .main-center').clone();
+  dom.addClass('mobile-only');
+  $('.section7 .main-part').prepend(dom);
+
+  // section8
+  function customWayPoint(className, addClassName, customOffset) {
+    jQuery(className).waypoint({
+      handler: function(direction) {
+        if (direction == "down") {
+          $(className).addClass(addClassName);
+        } else {
+          $(className).removeClass(addClassName);
+        }
+      },
+      offset: customOffset
+    });
+  }
+  
+  var defaultOffset = '50%';
+  
+  for (var i = 0; i < 5; i++) {
+    customWayPoint('.timeline__item--' + i, 'timeline__item-bg', defaultOffset);
+  }
 
 });

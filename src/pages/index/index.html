@@ -42,9 +42,9 @@
 
         <div class="toggle-holder">
           <div id="toggle" class="">
-            <div class="first-menu-line"></div>
-            <div class="second-menu-line"></div>
-            <div class="third-menu-line"></div>
+            <div class="first-menu-line menu"></div>
+            <div class="second-menu-line menu"></div>
+            <div class="third-menu-line menu"></div>
           </div>
         </div>
 
@@ -55,10 +55,24 @@
                 <a href="#home">Home</a>
               </li>
               <li>
-                <a>Account</a>
+                <a id="accountQuick" in18="account">Account</a>
+                <div id="accountDialog" class="account-dialog dialog hide">
+                  <div class="triangle">
+                    <span></span>
+                  </div>
+                  <div class="title">login to check you data</div>
+                  <input type="text" placeholder="pleace enter your s-id">
+                  <a class="lybutton" onclick="location.href='account.html'">submit</a>
+                </div>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact" in18="contact">Contact</a>
+              </li>
+              <li>
+                <div id="in18Toggle">
+                  <a href="" in18="language">Chinese</a>
+                  <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch" onclick="toggleLanguage(this)"><i></i></div>
+                </div>
               </li>
             </ul>
           </nav>
@@ -72,7 +86,8 @@
       <!-- HOME SECTION -->
 
       <div id="home" class="section">
-        <video autoplay="autoplay" loop="loop" muted="" width="100%" class="vv" id="video" style="display: none;"></video>
+        <video autoplay="autoplay" loop="loop" muted="" width="100%" class="vv" id="video"
+          style="display: none;"></video>
         <img src="/static/video.png" class="vv" alt="" id="videoImg">
         <div class="block content-1070 center-relative section-content">
           <div class="icon-scroll"></div>
@@ -82,7 +97,7 @@
           <p class="intro-description center"> monetize <br> your sports data?</p>
 
           <div class="btns" style="margin-top: 25%;">
-            <a href="#contact" target="_self" class="button">Check in</a>
+            <a href="#contact" target="_self" in18="checkIn" class="button">Check in</a>
             <a class="button2 scroll">SB-calculator</a>
           </div>
         </div>
@@ -96,41 +111,41 @@
           <p class="page-description">Our steps to maximize the step value goes beyond entertainment <br>
             How we make it come true</p>
 
-            <div class="linear-items">
-              <div class="one_third animate">
-                <div class="service-item relative">
-                  <h1 class="fa fa-sun-o"></h1>
-                  <h5 class="service-title">Create A SB</h5>
-                  <div class="service-content">
-                   Sign up for free,<br>bond to Wechat,<br>synchronize run data ev
-                  </div>
-                  <a class="service-link scroll" href="#clients" target="_self"></a>
+          <div class="linear-items">
+            <div class="one_third animate">
+              <div class="service-item relative">
+                <h1 class="fa fa-sun-o"></h1>
+                <h5 class="service-title">Create A SB</h5>
+                <div class="service-content">
+                  Sign up for free,<br>bond to Wechat,<br>synchronize run data ev
                 </div>
+                <a class="service-link scroll" href="#about" target="_self"></a>
               </div>
-    
-              <div class="one_third animate wait-03s">
-                <div class="service-item relative">
-                  <h1 class="fa fa-refresh"></h1>
-                  <h5 class="service-title">Synchronization</h5>
-                  <div class="service-content">
-                    Get converted coin<br>when you have runnig data,<br>as well from rewards
-                  </div>
-                  <a class="service-link scroll" href="#team" target="_self"></a>
-                </div>
-              </div>
-    
-              <div class="one_third last animate wait-06s">
-                <div class="service-item relative ">
-                  <h1 class="fa fa-gift"></h1>
-                  <h5 class="service-title">Get Reward</h5>
-                  <div class="service-content">
-                    Log in<br>and pick up your perfers,<br>enjoy
-                  </div>
-                  <a class="service-link scroll" href="#contact" target="_self"></a>
-                </div>
-              </div>
-              <div class="clear"></div>
             </div>
+
+            <div class="one_third animate wait-03s">
+              <div class="service-item relative">
+                <h1 class="fa fa-refresh"></h1>
+                <h5 class="service-title">Synchronization</h5>
+                <div class="service-content">
+                  Get converted coin<br>when you have runnig data,<br>as well from rewards
+                </div>
+                <a class="service-link scroll" href="#pricing" target="_self"></a>
+              </div>
+            </div>
+
+            <div class="one_third last animate wait-06s">
+              <div class="service-item relative ">
+                <h1 class="fa fa-gift"></h1>
+                <h5 class="service-title">Get Reward</h5>
+                <div class="service-content">
+                  Log in<br>and pick up your perfers,<br>enjoy
+                </div>
+                <a class="service-link scroll" href="#portfolio" target="_self"></a>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
 
         </div>
       </div>
@@ -153,7 +168,8 @@
             <div class="et-slide" style="background-image: url(/static/imgs/linear.png);">
               <div class="container clearfix">
                 <div class="description">
-                  <p>Under the hood,<br>Cactus runs a small local web server for each website you're working on.<br>This makes it possible to build your website locally,<br>using modern web technologies,</p>
+                  <p>Under the hood,<br>Cactus runs a small local web server for each website you're working on.<br>This
+                    makes it possible to build your website locally,<br>using modern web technologies,</p>
                 </div>
                 <!-- .description -->
                 <div class="featured-image">
@@ -170,7 +186,8 @@
               <div class="et-slide" style="background-image: url(/static/imgs/linear.png);">
                 <div class="container clearfix">
                   <div class="description">
-                    <p>Under the hood,<br>Cactus runs a small local web server for each website you're working on.<br>This makes it possible to build your website locally,<br>using modern web technologies,</p>
+                    <p>Under the hood,<br>Cactus runs a small local web server for each website you're working
+                      on.<br>This makes it possible to build your website locally,<br>using modern web technologies,</p>
                   </div>
                   <div class="featured-image">
                     <img src="/static/images/thumb-1-2-535x519.png" />
@@ -181,6 +198,7 @@
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
       <!-- ABOUT SECTION -->
@@ -188,14 +206,16 @@
       <div id="about" class="section section4">
         <div class="block content-1070 center-relative section-content">
           <h2 class="entry-title">Reward</h2>
-          <p class="page-description">Our steps Points distribution ratio and composition <br> How we make it Fair and reliable</p>
+          <p class="page-description">Our steps Points distribution ratio and composition <br> How we make it Fair and
+            reliable</p>
 
           <div class="one_half ">
             <p class="big-text ">A mote of dust suspended in a <font color="red">sunbeam</font> network</p>
             <p>Tunguska event quasar decipherment, are creatures of the cosmos, rich in heavy atoms Vangelis vanquish
               the impo sible hydrogen atoms paroxysm of global death</p>
             <p>Ship of the imagination dispassionate extraterrestrial observer cosmic ocean preserve and cherish that
-              blue other world gathered by gravity, <font color="blue">light years</font></p>
+              blue other world gathered by gravity, <font color="blue">light years</font>
+            </p>
 
             <div class="text-left">
               <a href="#contact" target="_self" class="button scroll">Formula details</a>
@@ -299,32 +319,22 @@
             <div id="textSlider" class="text-slider slider">
               <div class="text-slide">
                 <p class="text-slide-content">
-                  Emerged into consciousness decipherment Drake Equation explorations how far away. Trillion Drake
-                  Equation descended from astronomers light years
+                  Fun, unique, grow with your efforts<br>Blockchain based Crypto pet More than 30 species
                 </p>
-                <img class="text-slide-img" src="/static/images/testiomonial_img_01.jpg" alt="" />
-                <p class="text-slide-name">PETER HALL</p>
-                <p class="text-slide-position">CEO</p>
+                <p class="text-slide-extra">Swipe left and right to try</p>
+                <img class="text-slide-img" src="/static/imgs/rabbit.png" alt="" />
+                <p class="text-slide-name">JOHN SMITH</p>
+                <p class="text-slide-position">OURU</p>
               </div>
 
               <div class="text-slide">
                 <p class="text-slide-content">
-                  Globular star cluster, another world brain is the seed of intelligence a billion trillion bits of
-                  moving fluff hearts of the stars. Hypatia preserve and cherish that pale blue dot.
+                  Fun, unique, grow with your efforts<br>Blockchain based Crypto pet More than 30 species
                 </p>
+                <p class="text-slide-extra">Swipe left and right to try</p>
                 <img class="text-slide-img" src="/static/images/testiomonial_img_02.jpg" alt="" />
                 <p class="text-slide-name">JANE WILLIAMS</p>
                 <p class="text-slide-position">DESIGNER</p>
-              </div>
-
-              <div class="text-slide">
-                <p class="text-slide-content">
-                  Hypatia preserve and cherish that pale blue dot. Hundreds of thousands! Inconspicuous motes of rock
-                  and gas the carbon in our apple pies.
-                </p>
-                <img class="text-slide-img" src="/static/images/testiomonial_img_03.jpg" alt="" />
-                <p class="text-slide-name">JOHN SMITH</p>
-                <p class="text-slide-position">GURU</p>
               </div>
             </div>
           </div>
@@ -335,26 +345,23 @@
 
       <!-- TEAM SECTION -->
 
-      <div id="team" class="section">
+      <div id="team" class="section section6">
         <div class="block content-1070 center-relative section-content">
-          <h2 class="entry-title">Team</h2>
-          <p class="page-description">Our passion for design goes beyond beautiful imagery <br>We believe good design
-            should solve problems</p>
+          <h2 class="entry-title">Pets</h2>
+          <p class="page-description">Blockchain based Crypto Pet is another "U" in parallel Scoin</p>
 
-          <div class="two_third">
-            <p class="big-text">Per se neque porro quisquam est set, seper neque ipsum quister set dolorem per sei
-              donec…</p>
-          </div>
-          <div class="one_third last">
-            Ship of the imagination dispassionate extraterrestrial observer cosmic ocean preserve and cherish that blue
-            other world gathered by gravity, light years<br>
+          <div class="small-text last">
+            <p>Whether it's overall happiness in a country, the unemployment rate, or the participation rate in the
+              latest polls or e-votes, you can view everything on a powerful, customizable dashboard.Whether it's
+              overall happiness in a country, the unemployment rate, or the participation rate in the latest polls or
+              e-votes, you can view everything on a powerful, customizable dashboard.</p>
           </div>
           <div class="clear"></div>
           <p>&nbsp;</p>
 
           <div class="one_third ">
             <div class="member ">
-              <img class="member-img" src="/static/images/team_img_01.jpg" alt="" />
+              <img class="member-img" src="/static/imgs/t1.png" alt="" />
               <div class="member-info">
                 <p class="member-name">MARK STONE</p>
                 <p class="member-position">DEVELOPER</p>
@@ -374,7 +381,7 @@
 
           <div class="one_third">
             <div class="member">
-              <img class="member-img" src="/static/images/team_img_02.jpg" alt="" />
+              <img class="member-img" src="/static/imgs/t2.png" alt="" />
               <div class="member-info">
                 <p class="member-name">JOHN DOE</p>
                 <p class="member-position">DESIGNER</p>
@@ -394,7 +401,7 @@
 
           <div class="one_third last">
             <div class="member">
-              <img class="member-img" src="/static/images/team_img_03.jpg" alt="" />
+              <img class="member-img" src="/static/imgs/t3.png" alt="" />
               <div class="member-info">
                 <p class="member-name">ANNA DOE</p>
                 <p class="member-position">MARKETING</p>
@@ -418,72 +425,51 @@
 
       <!-- PRICING SECTION -->
 
-      <div id="pricing" class="section">
+      <div id="pricing" class="section section7">
         <div class="block content-1070 center-relative section-content">
-          <h2 class="entry-title">Pricing</h2>
-          <p class="page-description">Tellus donec dolor nunc tincidunt ac scelerisque ac varius <br> tempus diam
-            vivamus lacinia gravida enim</p>
+          <h2 class="entry-title">App</h2>
+          <p class="page-description">
+            <font color="red">Tellus</font> donec dolor nunc tincidunt ac scelerisque ac varius <br> tempus diam
+            vivamus lacinia <font color="red">gravida</font> enim
+          </p>
 
-          <div class="one_third no-margin">
-            <div class="pricing-table top-50">
-              <div class="pricing-table-header">
-                <div class="pricing-table-title">BASIC</div>
+          <div class="main-part">
+            <div class="left-part">
+              <div class="pricing-table">
+                <div class="group">
+                  <div class="title">Personal cloud storage</div>
+                  <div class="context">Whether it's overall happiness in a country, the unemployment rate, or the
+                    participation rate in the latest polls or e-votes, you can view everything on a powerful,
+                    customizable dashboard.</div>
+                </div>
+                <div class="group">
+                  <div class="title">Personal cloud storage</div>
+                  <div class="context">Whether it's overall happiness in a country, the unemployment rate, or the
+                    participation rate in the latest polls or e-votes, you can view everything on a powerful,
+                    customizable dashboard.</div>
+                </div>
               </div>
-              <div class="pricing-table-price">$29.99</div>
-              <div class="pricing-table-desc">per month</div>
-              <div class="pricing-table-content-holder">
-                <ul>
-                  <li>25 GB Storage</li>
-                  <li>24/7 Support</li>
-                  <li>Up to 50 Users</li>
-                  <li>Donec Estu</li>
-                  <li>Lorem Ipsum</li>
-                </ul>
-              </div>
-              <a href="#" class="button" target="_self">Purchase</a>
             </div>
-          </div>
 
-          <div class="one_third no-margin">
-            <div class="pricing-table ">
-              <div class="pricing-table-header">
-                <div class="pricing-table-title">STANDARD</div>
+            <div class="main-center">
+              <div class="pricing-table ">
+                <img src="/static/imgs/mobile.png" alt="">
               </div>
-              <div class="pricing-table-price">$39.99</div>
-              <div class="pricing-table-desc">per month</div>
-              <div class="pricing-table-content-holder">
-                <ul>
-                  <li>50 GB Storage</li>
-                  <li>24/7 Support</li>
-                  <li>Up to 1000 Users</li>
-                  <li>Donec Estu</li>
-                  <li>Lorem Ipsum</li>
-                  <li>Sit Ametus</li>
-                  <li>Vivamus Lacin</li>
-                  <li>Scelerisa Esta</li>
-                </ul>
-              </div>
-              <a href="#" class="button" target="_self">Purchase</a>
             </div>
-          </div>
 
-          <div class="one_third last no-margin">
-            <div class="pricing-table top-50">
-              <div class="pricing-table-header">
-                <div class="pricing-table-title">ADVANCED</div>
+            <div class="last right-part">
+              <div class="pricing-table">
+                <div class="group">
+                  <div class="title">Personal cloud storage</div>
+                  <div class="context">Whether it's overall happiness in a country, the unemployment rate, or the
+                    participation rate in the latest polls or e-votes, you can view everything on a powerful,
+                    customizable dashboard.</div>
+                </div>
+                <div class="group">
+                  <div class="title">Personal cloud storage</div>
+                  <img src="/static/imgs/qr.png" alt="">
+                </div>
               </div>
-              <div class="pricing-table-price">$49.99</div>
-              <div class="pricing-table-desc">per month</div>
-              <div class="pricing-table-content-holder">
-                <ul>
-                  <li>25 GB Storage</li>
-                  <li>24/7 Support</li>
-                  <li>Up to 50 Users</li>
-                  <li>Donec Estu</li>
-                  <li>Lorem Ipsum</li>
-                </ul>
-              </div>
-              <a href="#" class="button" target="_self">Purchase</a>
             </div>
           </div>
           <div class="clear"></div>
@@ -493,111 +479,55 @@
 
       <!-- NEWS SECTION -->
 
-      <div id="news" class="section">
+      <div id="news" class="section section8">
         <div class="block content-1070 center-relative section-content">
-          <h2 class="entry-title">News</h2>
-          <p class="page-description">Latest news and updates</p>
-        </div>
-        <div class="full-page-width center-relative">
-          <div class="blog-holder block center-relative">
-
-            <article class="relative animate blog-item-holder center-relative">
-              <h4 class="entry-title">
-                <a href="single.html">A very small stage in a vast cosmic arena rich in mystery <span
-                    class="arrow"></span></a>
-              </h4>
-              <div class="entry-date published">September 2017</div>
-              <div class="author vcard ">Mike Stone</div>
-              <div class="kudos">
-                <div class="post-kudo">
-                  <a>
-                    <div class="big-circle"></div>
-                  </a>
-                  <span class="count">4</span>
+          <h2 class="entry-title">Roadmap</h2>
+          <div class="timeline">
+            <div class="wrapper">
+              <div class="timeline__item timeline__item--0">
+                <div class="timeline__item__station"></div>
+                <div class="timeline__item__content">
+                  <h2 class="timeline__item__content__date">1977 Aug. 20</h2>
+                  <p class="timeline__item__content__description">Voyager 2 launched from Kennedy Space Flight Center
+                  </p>
                 </div>
               </div>
-              <div class="clear"></div>
-            </article>
-
-            <article class="relative animate blog-item-holder center-relative">
-              <h4 class="entry-title">
-                <a href="single.html">Citizens of distant epochs decipherment the carbon in our apple pies kindling
-                  <span class="arrow"></span></a></h4>
-              <div class="entry-date published">September 2017</div>
-              <div class="author vcard ">Mike Stone</div>
-              <div class="kudos">
-                <div class="post-kudo">
-                  <a>
-                    <div class="big-circle"></div>
-                  </a>
-                  <span class="count">3</span>
+              <div class="timeline__item timeline__item--1">
+                <div class="timeline__item__station"></div>
+                <div class="timeline__item__content">
+                  <h2 class="timeline__item__content__date">1977 Sept. 5</h2>
+                  <p class="timeline__item__content__description">Voyager 1 launched from Kennedy Space Flight Center,
+                    Voyager 1 returns first spacecraft photo of Earth and Moon</p>
                 </div>
               </div>
-              <div class="clear"></div>
-            </article>
-
-            <article class="relative animate blog-item-holder center-relative">
-              <h4 class="entry-title">
-                <a href="single.html">Galaxies citizens of distant epochs two ghostly white figures <span
-                    class="arrow"></span></a></h4>
-              <div class="entry-date published">September 2017</div>
-              <div class="author vcard ">Mike Stone</div>
-              <div class="kudos">
-                <div class="post-kudo">
-                  <a>
-                    <div class="big-circle"></div>
-                  </a>
-                  <span class="count">3</span>
+              <div class="timeline__item timeline__item--2">
+                <div class="timeline__item__station"></div>
+                <div class="timeline__item__content">
+                  <h2 class="timeline__item__content__date">1979 Mar. 5</h2>
+                  <p class="timeline__item__content__description">Voyager 1 makes its closest approach to Jupiter</p>
                 </div>
               </div>
-              <div class="clear"></div>
-            </article>
-
-            <article class="relative animate blog-item-holder center-relative">
-              <h4 class="entry-title">
-                <a href="single.html">From which we spring with pretty stories for which there’s little good <span
-                    class="arrow"></span></a></h4>
-              <div class="entry-date published">September 2017</div>
-              <div class="author vcard ">Mike Stone</div>
-              <div class="kudos">
-                <div class="post-kudo">
-                  <a>
-                    <div class="big-circle"></div>
-                  </a>
-                  <span class="count">2</span>
+              <div class="timeline__item timeline__item--3">
+                <div class="timeline__item__station"></div>
+                <div class="timeline__item__content">
+                  <h2 class="timeline__item__content__date">1979 July 9</h2>
+                  <p class="timeline__item__content__description">Voyager 2 makes its closest approach to Jupiter</p>
                 </div>
               </div>
-              <div class="clear"></div>
-            </article>
-
-            <article class="relative animate blog-item-holder center-relative">
-              <h4 class="entry-title">
-                <a href="single.html">Muse about culture brain is the seed of intelligence Jean-Francois <span
-                    class="arrow"></span></a></h4>
-              <div class="entry-date published">September 2017</div>
-              <div class="author vcard ">Mike Stone</div>
-              <div class="kudos">
-                <div class="post-kudo">
-                  <a>
-                    <div class="big-circle"></div>
-                  </a>
-                  <span class="count">4</span>
+              <div class="timeline__item timeline__item--4">
+                <div class="timeline__item__station"></div>
+                <div class="timeline__item__content">
+                  <h2 class="timeline__item__content__date">1980 Nov. 12</h2>
+                  <p class="timeline__item__content__description">Voyager 1 flies by Saturn, Voyager 1 begins its trip
+                    out of the Solar System</p>
                 </div>
               </div>
-              <div class="clear"></div>
-            </article>
-          </div>
-          <p>&nbsp;</p>
-          <div class="center-text">
-            <a href="#" target="_self" class="button">Read More</a>
+            </div>
           </div>
         </div>
       </div>
 
-
-      <!-- CONTACT SECTION -->
-
-      <div id="contact" class="section">
+      <div id="contact" class="section section9">
         <div class="block content-1070 center-relative section-content">
           <h2 class="entry-title">Contact</h2>
           <p class="page-description">Tellus donec dolor nunc tincidunt ac scelerisque ac varius <br> tempus diam
@@ -638,12 +568,24 @@
             </div>
             <div class="clear"></div>
           </div>
+          <div class="logos">
+            <div class="img"><img src="/static/imgs/logo.png" alt=""></div>
+            <div class="url">stepbook.io</div>
+            <div class="copyright">Copyright 2019 All rights reserved</div>
+          </div>
+        </div>
+        <div class="coming-soon">
+          <div class="qr"><img src="/static/imgs/qr2.png" alt=""></div>
+          <div class="text-left">
+            <div class="top">Wearable Mining Machine</div>
+            <div class="btm">coming soon</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <script type="text/javascript" src="/static/js/lyweb.min.js"></script>
 
+    <script type="text/javascript" src="/static/js/lyweb.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.waypoints.min.js"></script>
 </body>
+
 </html>
