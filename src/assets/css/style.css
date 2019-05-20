@@ -377,8 +377,7 @@ background: linear-gradient(to bottom, #142027 0%,#17262e 100%); /* W3C */ }
 }
 
 
-#et-slider-wrapper { height: 805px;
-    max-height: calc(100vh - 110px);position: relative; background: #0c151b; }
+#et-slider-wrapper { height: 805px; position: relative; background: #0c151b; }
 	.et-slide { background-repeat: no-repeat; background-position: top center; -moz-background-size: cover; -webkit-background-size: cover; background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 		.et-slide .container { padding: 40px 0 0; }
 		.et-slide .scoins {
