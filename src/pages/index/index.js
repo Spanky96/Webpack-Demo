@@ -47,9 +47,15 @@ global.toggleLanguage = function (el) {
   $(el).toggleClass('layui-form-onswitch');
   var language = in18[active ? 1 : 0]
   var keys = Object.keys(language);
+  $('.one_third .service-item').addClass('hide');
   keys.forEach(function (n) {
-    $(`[in18=${n}]`).text(language[n]);
+    $(`[in18=${n}]`).html(language[n]);
+    $(`[in18_ph=${n}]`).prop('placeholder', language[n]);
   });
+  // 修复浏览器不支持 transparent 颜色bug
+  setTimeout(function () {
+    $('.one_third .service-item').removeClass('hide');
+  }, 100)
 }
 $(function(){
   if (!browserRedirect()) {

@@ -52,7 +52,7 @@
           <nav id="header-main-menu">
             <ul class="main-menu sm sm-clean">
               <li>
-                <a href="#home">Home</a>
+                <a href="#home" in18="home">Home</a>
               </li>
               <li>
                 <a id="accountQuick" in18="account">Account</a>
@@ -60,19 +60,20 @@
                   <div class="triangle">
                     <span></span>
                   </div>
-                  <div class="title">login to check you data</div>
-                  <input type="text" placeholder="pleace enter your s-id">
-                  <a class="lybutton" onclick="location.href='account.html'">submit</a>
+                  <div class="title" in18="login_tip">login to check you data</div>
+                  <input type="text" placeholder="pleace enter your s-id" in18_ph="login_ph">
+                  <a class="lybutton" onclick="location.href='account.html'" in18="submit">submit</a>
                 </div>
               </li>
               <li>
                 <a href="#contact" in18="contact">Contact</a>
               </li>
               <li>
-                <div id="in18Toggle">
-                  <a href="" in18="language">Chinese</a>
-                  <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch" onclick="toggleLanguage(this)"><i></i></div>
-                </div>
+                <a in18="language" class="layui-form-onswitch languageOption" onclick="toggleLanguage(this)">Chinese<img class="flag" src="/static/imgs/chn.png"></a>
+                <!-- <div id="in18Toggle" class="layui-form-onswitch" onclick="toggleLanguage(this)">
+                  <a in18="language" style="width: 85px !important;">Chinese</a>
+                  <div class="layui-unselect layui-form-switch" lay-skin="_switch"><i></i></div>
+                </div> -->
               </li>
             </ul>
           </nav>
@@ -90,17 +91,18 @@
           style="display: none;"></video>
         <img src="/static/video.png" class="vv" alt="" id="videoImg">
         <div class="block content-1070 center-relative section-content">
+          <div class="section-main1">
+            <h1 class="curve-text center" in18="home_title_1">How to</h1>
+            <p class="intro-description center" in18="home_title_2"> monetize <br> your sports data?</p>
+  
+            <div id="acquireBonus">
+              <p class="help-text" in18="home_tip">send your E-mail to acquire bonus</p>
+              <input type="text" placeholder="please enter your E-mail" in18_ph="home_ph"><a class="button" in18="submit">submit</a>
+            </div>
+          </div>
           <div class="icon-scroll"></div>
         </div>
-        <div class="section-main1">
-          <h1 class="curve-text center">How to</h1>
-          <p class="intro-description center"> monetize <br> your sports data?</p>
-
-          <div class="btns" style="margin-top: 25%;">
-            <a href="#contact" target="_self" in18="checkIn" class="button">Check in</a>
-            <a class="button2 scroll">SB-calculator</a>
-          </div>
-        </div>
+        
       </div>
 
       <!-- SERVICES SECTION -->
@@ -108,16 +110,14 @@
       <div id="services" class="section">
         <div class="block content-1070 center-relative section-content">
           <h2 class="entry-title">Reward</h2>
-          <p class="page-description">Our steps to maximize the step value goes beyond entertainment <br>
-            How we make it come true</p>
+          <p class="page-description" in18="section1_top">Our mission is maximize the Sports Data value engage with Entertainment, collaborate each individual through crypto blockchain technology, how can we make it happen</p>
 
           <div class="linear-items">
             <div class="one_third animate">
               <div class="service-item relative">
                 <h1 class="fa fa-sun-o"></h1>
-                <h5 class="service-title">Create A SB</h5>
-                <div class="service-content">
-                  Sign up for free,<br>bond to Wechat,<br>synchronize run data ev
+                <h5 class="service-title" in18="section1_m_1t">Creat A SB</h5>
+                <div class="service-content" in18="section1_m_1p" style="height: 72px">Sign up for free, <br>bond to Wechat,<br>synchronize run data everyday
                 </div>
                 <a class="service-link scroll" href="#about" target="_self"></a>
               </div>
@@ -126,9 +126,9 @@
             <div class="one_third animate wait-03s">
               <div class="service-item relative">
                 <h1 class="fa fa-refresh"></h1>
-                <h5 class="service-title">Synchronization</h5>
-                <div class="service-content">
-                  Get converted coin<br>when you have runnig data,<br>as well from rewards
+                <h5 class="service-title" in18="section1_m_2t">Synchronization</h5>
+                <div class="service-content" in18="section1_m_2p" style="height: 72px">
+                  Get converted coin <br>when you run sport data, <br>activity reward as well
                 </div>
                 <a class="service-link scroll" href="#pricing" target="_self"></a>
               </div>
@@ -137,9 +137,9 @@
             <div class="one_third last animate wait-06s">
               <div class="service-item relative ">
                 <h1 class="fa fa-gift"></h1>
-                <h5 class="service-title">Get Reward</h5>
-                <div class="service-content">
-                  Log in<br>and pick up your perfers,<br>enjoy
+                <h5 class="service-title" in18="section1_m_3t">Get Reward</h5>
+                <div class="service-content" in18="section1_m_3p" style="height: 72px">
+                  Log in and<br>pick up your award
                 </div>
                 <a class="service-link scroll" href="#portfolio" target="_self"></a>
               </div>

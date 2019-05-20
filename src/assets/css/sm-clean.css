@@ -196,6 +196,7 @@
     }
     .sm-clean li {
         border-top: 0;
+        width: 80px;
     }    
     .sm-clean > li > ul:after {
         top: -16px;
