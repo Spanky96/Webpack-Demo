@@ -200,8 +200,11 @@ body {
   .account-dialog {
     width: 300px;
     top: 150px;
+    .lybutton {
+      display: inline;
+    }
     .triangle {
-      right: 131px;
+      right: 119px;
     }
   }
   &:hover {
@@ -499,25 +502,30 @@ a.button2 {
   .elbtns {
     display: flex;
     justify-content: space-around;
-    width: 360px;
+    width: 75%;
+    min-width: 345px;
+    max-width: 450px;
     margin: 0 auto;
     margin-bottom: 40px;
     .btn {
       color: #49445E;
       padding: 5px 10px;
       cursor: pointer;
+      min-width: 70px;
+      max-width: 90px;
+      text-align: center;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       &.active {
-        padding: 5px 10px;
-        display: inline-block;
         color: #fff !important;
         background-color: #e625a4;
-        text-align: left;
         cursor: pointer;
         vertical-align: middle;
         text-decoration: none;
         transition: all .2s linear;
         border-radius: 50px;
-        font-size: 14px;
         box-shadow: 0px 0px 50px 0px rgba(230, 37, 164, 0.65);
       }
     }
@@ -564,7 +572,7 @@ a.button2 {
 }
 
 .slick-next {
-  bottom: 100px;
+  bottom: 55px;
   top: auto;
   right: calc(50% - 140px);
   background-image: none;
@@ -587,7 +595,7 @@ a.button2 {
 }
 
 .slick-prev {
-  bottom: 100px;
+  bottom: 55px;
   top: auto;
   left: calc(50% - 140px);
   background-image: none;
@@ -614,7 +622,7 @@ a.button2 {
   color: #fff;
   font-weight: 600;
   letter-spacing: 3px;
-  margin-bottom: 0;
+  margin: 10px 0 -10px;
 }
 
 .text-slide-position {
@@ -841,8 +849,8 @@ a.button2 {
 .service-item {
   text-align: center;
   color: transparent;
-  font-size: 12px;
-  max-width: 200px;
+  font-size: 14px;
+  max-width: 220px;
   margin: 0 auto;
   font-weight: 400;
   h1 {
@@ -857,7 +865,7 @@ a.button2 {
 h5.service-title {
   color: transparent;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 45px;
   padding-top: 0;
 }
@@ -1408,6 +1416,7 @@ a.video-popup-holder:hover .popup-play {
   position: absolute;
   bottom: -40px;
   left: 50%;
+  width: 80px;
   transform: translateX(-50%);
 }
 
@@ -1416,14 +1425,14 @@ a.video-popup-holder:hover .popup-play {
 ====================================== */
 .section5 {
   overflow: hidden;
-  .text-slide {
-    .text-slide-content {
-      margin-bottom: 10px;
-      line-height: 40px;
-    }
-    .text-slide-extra {
-      color: #E25FB7;
-    }
+  .text-slide-content {
+    margin-bottom: 10px;
+    line-height: 32px;
+    font-size: 20px;
+  }
+  .text-slide-extra {
+    color: #E25FB7;
+    font-size: 18px;
   }
 }
 .section6 {
@@ -1472,14 +1481,9 @@ span.up-text {
   vertical-align: 85px;
   margin-left: -21px;
   font-weight: 300;
-  position: relative;
-  .extra-text {
-    position: absolute;
-    text-align: left;
-    width: 2000%;
-    top: -75px;
-    left: 0px;
-  }
+  width: 80px;
+  display: inline-block;
+  text-align: left;
 }
 
 .big-down-text {
@@ -2486,7 +2490,7 @@ li {
   .section .page-description, .blog .page-description {
     font-size: 20px;
     line-height: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
   .blog-item-holder {
     h4 a {
@@ -2569,6 +2573,7 @@ li {
     bottom: 0;
     color: #fff;
     transform: none;
+    width: unset;
   }
   .service-item {
     max-width: none;
@@ -2592,9 +2597,6 @@ li {
   span.up-text {
     font-size: 34px;
     vertical-align: 65px;
-    .extra-text {
-      top: -50px;
-    }
   }
   .pricing-table {
     margin-top: 0 !important;
@@ -2706,17 +2708,14 @@ li {
     margin-bottom: 60px;
   }
   .big-number-content {
-    font-size: 35px;
+    font-size: 45px;
     margin-top: 0;
   }
   span.up-text {
     font-size: 18px;
     vertical-align: 33px;
     margin-left: -5px;
-    .extra-text {
-      top: -25px;
-      left: 0px;
-    }
+    width: 40px;
   }
   .category-filter-list .button {
     margin-right: 8px;

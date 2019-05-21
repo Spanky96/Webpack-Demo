@@ -670,12 +670,6 @@ img.alignright { display:inline; float:right; margin-left:15px; }
 	.container { width: 728px; }
 		#logo { float: none; }
 		#menu-wrap { float: none; clear: both; padding-top: 38px; }
-
-		/* #et-slider-wrapper { height: 760px; }
-			.et-slide .container { padding-top: 250px; }
-				.et-slide .description { width: 277px; padding-top: 32px; }
-					.description h2 { font-size: 48px; }
-				.featured-image, #et-slider-controls .et-controllers { width: 402px; } */
 			#et-slider-controls { bottom: 100px; }
 
 		.et-slider-arrows a { top: 413px; }
@@ -727,22 +721,10 @@ img.alignright { display:inline; float:right; margin-left:15px; }
 
 @media only screen and ( max-width: 767px ) {
 	#et-slider-wrapper {
-		height: calc(70vw + 300px);
+		height: calc(70vw + 380px);
 	}
 	.container { width: 440px; }
 		.top-content.container { text-align: center; }
-			/* #logo, #top-menu { float: none;	}
-			#social-icons, .description p { display: none; }
-			.description .subtitle { display: block; }
-			.description .more { font-size: 18px; float: left; padding: 17px; } */
-
-		/* #et-slider-wrapper { height: 544px; }
-			.et-slide .container { padding-top: 233px; }
-				.et-slide .description { width: 203px; padding-top: 22px; }
-				.featured-image { width: 211px; }
-				#et-slider-controls .et-controllers { width: 100%; text-align: center; }
-			#et-slider-controls { bottom: 60px; } */
-
 		.et-slider-arrows a { top: 312px; }
 
 		#et-slider-wrapper .et-arrow-prev { left: 0; }
@@ -805,12 +787,6 @@ img.alignright { display:inline; float:right; margin-left:15px; }
 
 @media only screen and ( max-width: 479px ) {
 	.container { width: 320px; }
-		/* #et-slider-wrapper { height: 505px; } */
-			/* .featured-image, #et-search-form, #content .wp-pagenavi .pages { display: none; }
-
-			.et-slide .description { float: none; width: 100%; }
-				.et-slide .description .more { float: none; } */
-
 		.top-content.container, .et-slide .container, #logos .container, p#copyright { text-align: center; }
 			#logo, #top-menu { float: none;	}
 			#social-icons, #footer-widgets, .bottom-nav { display: none; }
