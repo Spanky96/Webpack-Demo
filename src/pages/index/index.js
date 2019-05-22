@@ -51,6 +51,7 @@ global.toggleLanguage = function (el) {
   keys.forEach(function (n) {
     $(`[in18=${n}]`).html(language[n]);
     $(`[in18_ph=${n}]`).prop('placeholder', language[n]);
+    $(`[in18_val=${n}]`).val(language[n]);
   });
   // 修复浏览器不支持 transparent 颜色bug
   setTimeout(function () {
@@ -59,10 +60,15 @@ global.toggleLanguage = function (el) {
 }
 $(function(){
   if (!browserRedirect()) {
-    // 如果是电脑端
-    $('#video').attr('src', '/static/video.mp4');
-    $('#video').show();
-    $('#videoImg').hide();
+		// 如果是电脑端
+		$('#video').attr('src', '/static/video.mp4');
+		setTimeout(function () {
+			var video = document.getElementById('video');
+			video.playbackRate = 0.3;
+			document.getElementById('video').currentTime = 0.8
+			$('#video').show();
+			$('#videoImg').hide();
+		}, 2000)
   }
 
   // 适配移动端 复制一个dialog
