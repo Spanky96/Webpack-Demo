@@ -24,15 +24,19 @@
 </head>
 
 <body>
-
+  <audio id="audio" src="" autoplay="autoplay" loop="loop"></audio>
+  <div id="modal" class="modal active" style="display: none;"><embed class="chartsvg" src="/static/chart.svg" type="image/svg+xml"/></div>
   <div class="site-wrapper">
-
     <div class="doc-loader">
       <img src="/static/images/preloader.gif" alt="Blanka">
     </div>
 
 
     <header class="header-holder">
+      <div class="music-controller breath">
+        <i class="fa fa-music" aria-hidden="true"></i>
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </div>
       <div class="menu-wrapper center-relative relative">
         <div class="header-logo">
           <a href="index.html">
@@ -83,9 +87,10 @@
       <!-- HOME SECTION -->
 
       <div id="home" class="section">
-        <video autoplay="autoplay" loop="loop" muted="" width="100%" class="vv" id="video"
+        <video autoplay="autoplay" muted="" width="100%" class="vv" id="video"
           style="display: none;"></video>
-        <img src="/static/video.png" class="vv" alt="" id="videoImg">
+        <img src="/static/video_phone.jpg" class="vv videoImg" alt="" id="videoImg2">
+        <img src="/static/video.jpg" class="vv videoImg" alt="" id="videoImg">
         <div class="block content-1070 center-relative section-content">
           <div class="section-main1">
             <h1 class="curve-text center" in18="home_title_1">How to</h1>
@@ -305,17 +310,17 @@
           <div class="one_half one_half_left">
             <p in18="section4_m_p" class="content-p">The Stepbook tokens are a key element which facilitate all interaction in the system in relation to the entertainment and a healthy lifestyle. The tokens are used to incentivize people to be active participants, make connections and improve their health. The tokens will distribute on the next generation cryptocurrency blockchain. This, of course, imposes certain standard rules for the community.</p>
             <div class="text-left">
-              <a class="button scroll breath" in18="section4_m_btn">Formula Details</a>
+              <a class="button breath" in18="section4_m_btn" id="FormulaDetailButton">Formula Details</a>
             </div>
           </div>
           <div class="one_half last animate pie">
             <img class="thumb" src="/static/imgs/pie.png" alt="" />
-            <p class="top-left">30%<br>Game mining</p>
-            <p class="top-right">70%<br>Sports mining</p>
-            <p class="bottom-middle">NO<br>Reservation</p>
+              <!-- <p class="top-left">30%<br>Game mining</p>
+              <p class="top-right">70%<br>Sports mining</p>
+              <p class="bottom-middle">NO<br>Reservation</p> -->
           </div>
           <div class="clear"></div>
-          <embed src="/static/chart.svg" type="image/svg+xml"/>
+          
           <div class="v-skills-holder">
             <span class="v-skills-level"></span>
             <span class="v-skills-level-2"></span>

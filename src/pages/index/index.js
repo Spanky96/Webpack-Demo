@@ -41,6 +41,7 @@ function updateTimer() {
   var time = new Date().Format('hh:mm:ss');
   $('#lyTimer').text(time);
 }
+
 // 语言切换
 global.toggleLanguage = function (el) {
   var active = $(el).hasClass('layui-form-onswitch');
@@ -58,18 +59,31 @@ global.toggleLanguage = function (el) {
     $('.one_third .service-item').removeClass('hide');
   }, 100)
 }
+
 $(function(){
   if (!browserRedirect()) {
 		// 如果是电脑端
+		$('.music-controller').css('display', 'block');
+		$('.music-controller').click(function (e) {
+			if ($(this).hasClass('off')) {
+				$(this).removeClass('off');
+				document.getElementById('audio').play();
+			} else {
+				$(this).addClass('off');
+				document.getElementById('audio').pause();
+			}
+		});
+		$('#audio').attr('src', '/static/music.mp3');
 		$('#video').attr('src', '/static/video.mp4');
 		setTimeout(function () {
+			$('.videoImg').hide();
 			var video = document.getElementById('video');
-			video.playbackRate = 0.3;
-			document.getElementById('video').currentTime = 0.8
+		  video.playbackRate = 0.3;
+			// document.getElementById('video').currentTime = 0.8
 			$('#video').show();
-			$('#videoImg').hide();
 		}, 2000)
-  }
+	}
+
 
   // 适配移动端 复制一个dialog
   var dialog = $('.account-dialog');
@@ -114,6 +128,17 @@ $(function(){
 
   });
 
+	$('#FormulaDetailButton').click(function (e) {
+		$('#modal').show();
+		$('body').css('overflow', 'hidden');
+		$('#modal').addClass('active');
+	});
+
+	$('#modal').click(function () {
+		$('#modal').removeClass('active');
+		$('#modal').hide();
+		$('body').css('overflow', 'auto');
+	});
 
 
   // section5 时间刷新

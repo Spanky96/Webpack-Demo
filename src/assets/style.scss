@@ -154,6 +154,32 @@ body {
   width: 100% !important;
   top: 0;
   position: fixed;
+  .music-controller {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
+    top: 10px;
+    font-size: 22px;
+    line-height: 28px;
+    width: 28px;
+    height: 26px;
+    text-align: center;
+    color: #e625a4;
+    animation: neon1 1.5s ease-in-out infinite alternate;
+    .fa-volume-off {
+      display: none;
+    }
+    &.off {
+      animation: none;
+      .fa-music {
+        display: none;
+      }
+      .fa-volume-off {
+        display: block;
+      }      
+    }
+  }
 }
 
 .admin-bar .header-holder {
@@ -376,7 +402,7 @@ body {
   li {
     margin-right: 10px;
     &:last-child {
-      margin-right: 0;
+      margin-right: 20px;
     }
   }
   ul {
@@ -1273,6 +1299,9 @@ div.pp_default {
   }
 }
 @media screen and (max-width: 520px) {
+  #videoImg {
+    display: none !important;
+  }
   .section4 .pie {
     .top-left {
       font-size: 16px;
@@ -3020,7 +3049,7 @@ li {
     width: 200px;
     text-indent: 10px;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 9px;
   }
   .button {
     padding: 0 20px;
@@ -3063,5 +3092,27 @@ li {
     -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
     -moz-animation: neon1 1.5s ease-in-out infinite alternate;
     animation: neon1 1.5s ease-in-out infinite alternate; 
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+  opacity: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  embed {
+    max-width: 90%;
+  }
+  &.active {
+    opacity: 1;
   }
 }
