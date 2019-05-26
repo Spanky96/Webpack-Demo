@@ -25,7 +25,9 @@
 
 <body>
   <audio id="audio" src="" autoplay="autoplay" loop="loop"></audio>
-  <div id="modal" class="modal active" style="display: none;"><embed class="chartsvg" src="/static/chart.svg" type="image/svg+xml"/></div>
+  <div id="modal" class="modal active" style="display: none;">
+    <embed class="chartsvg" src="/static/chart.svg" type="image/svg+xml" onload="svgLoaded(this)"/>
+  </div>
   <div class="site-wrapper">
     <div class="doc-loader">
       <img src="/static/images/preloader.gif" alt="Blanka">
@@ -34,8 +36,8 @@
 
     <header class="header-holder">
       <div class="music-controller breath">
-        <i class="fa fa-music" aria-hidden="true"></i>
-        <i class="fa fa-volume-off" aria-hidden="true"></i>
+        <div class="la-volume-off"><img src="/static/imgs/mu1.png"></imgsrc></div>
+        <div class="la-music"><img class="fa-music" src="/static/imgs/mu2.png"></div>
       </div>
       <div class="menu-wrapper center-relative relative">
         <div class="header-logo">
@@ -73,7 +75,8 @@
                 <a href="#contact" in18="contact">Contact</a>
               </li>
               <li>
-                <a in18="language" class="layui-form-onswitch languageOption" onclick="toggleLanguage(this)">Chinese<img class="flag" src="/static/imgs/chn.png"></a>
+                <a in18="language" class="layui-form-onswitch languageOption" onclick="toggleLanguage(this)">Chinese</a>
+                <!-- <img class="flag" src="/static/imgs/chn.png"> -->
               </li>
             </ul>
           </nav>
@@ -98,7 +101,7 @@
   
             <div id="acquireBonus">
               <p class="help-text" in18="home_tip">send your E-mail to acquire bonus</p>
-              <input type="text" placeholder="please enter your E-mail" in18_ph="home_ph"><a class="button breath" in18="submit">submit</a>
+              <div><input type="text" placeholder="please enter your E-mail" in18_ph="home_ph"><a class="button breath" in18="submit">submit</a></div>
             </div>
           </div>
           <div class="icon-scroll"></div>
@@ -156,9 +159,9 @@
           <h2 class="entry-title">Reward</h2>
           <div class="elbtns">
             <div class="btn active" in18="section3_t_1" type="Basic">Basic</div>
-            <div class="btn breath" in18="section3_t_2" type="Medium">Medium</div>
-            <div class="btn breath" in18="section3_t_3" type="Premium">Premium</div>
-            <div class="btn breath" in18="section3_t_4" type="Superme">Superme</div>
+            <div class="btn" in18="section3_t_2" type="Medium">Medium</div>
+            <div class="btn" in18="section3_t_3" type="Premium">Premium</div>
+            <div class="btn" in18="section3_t_4" type="Superme">Superme</div>
           </div>
         </div>
         <div id="et-slider-wrapper" class="slider-wrapper et_slider_speed_7000 Basic">
@@ -524,7 +527,7 @@
 
             <div class="main-center">
               <div class="pricing-table ">
-                <img src="/static/imgs/mobile.png" alt="">
+                <img src="/static/imgs/mobile.png" style="border-radius: 50px;">
               </div>
             </div>
 
@@ -636,13 +639,13 @@
             <div class="copyright">Copyright 2019 All rights reserved</div>
           </div>
         </div>
-        <div class="coming-soon">
+        <!-- <div class="coming-soon">
           <div class="qr"><img src="/static/imgs/qr2.png" alt=""></div>
           <div class="text-left">
             <div class="top">Wearable Mining Machine</div>
             <div class="btm">coming soon</div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 

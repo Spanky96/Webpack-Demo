@@ -41,7 +41,12 @@ function updateTimer() {
   var time = new Date().Format('hh:mm:ss');
   $('#lyTimer').text(time);
 }
-
+global.hideModal = function () {
+	$('#modal').removeClass('active');
+	$('#modal').hide();
+	$('body').css('overflow', 'auto');
+	return false;
+}
 // 语言切换
 global.toggleLanguage = function (el) {
   var active = $(el).hasClass('layui-form-onswitch');
@@ -58,6 +63,12 @@ global.toggleLanguage = function (el) {
   setTimeout(function () {
     $('.one_third .service-item').removeClass('hide');
   }, 100)
+}
+
+global.svgLoaded = function (ele) {
+	var svg = ele.getSVGDocument();
+	var pageText = svg.getElementById("svgchart");
+	$(pageText).click(hideModal);
 }
 
 $(function(){
@@ -132,14 +143,10 @@ $(function(){
 		$('#modal').show();
 		$('body').css('overflow', 'hidden');
 		$('#modal').addClass('active');
+		event.stopPropagation();
 	});
 
-	$('#modal').click(function () {
-		$('#modal').removeClass('active');
-		$('#modal').hide();
-		$('body').css('overflow', 'auto');
-	});
-
+	$('#modal').click(hideModal);
 
   // section5 时间刷新
   setInterval(updateTimer, 1000);

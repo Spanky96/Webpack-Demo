@@ -151,6 +151,7 @@ body {
 .header-holder {
   z-index: 99 !important;
   background-color: #5d538cf2;
+  background-color: rgba(93, 83, 140, 0.9490196078431372);
   width: 100% !important;
   top: 0;
   position: fixed;
@@ -158,8 +159,8 @@ body {
     display: none;
     position: absolute;
     cursor: pointer;
-    right: 5px;
-    top: 10px;
+    right: 15px;
+    top: 23px;
     font-size: 22px;
     line-height: 28px;
     width: 28px;
@@ -167,15 +168,15 @@ body {
     text-align: center;
     color: #e625a4;
     animation: neon1 1.5s ease-in-out infinite alternate;
-    .fa-volume-off {
+    .la-volume-off {
       display: none;
     }
     &.off {
       animation: none;
-      .fa-music {
+      .la-music {
         display: none;
       }
-      .fa-volume-off {
+      .la-volume-off {
         display: block;
       }      
     }
@@ -553,6 +554,7 @@ a.button2 {
         transition: all .2s linear;
         border-radius: 50px;
         box-shadow: 0px 0px 50px 0px rgba(236, 75, 129, 0.65);
+        @extend .breath;
       }
     }
   }
@@ -1824,6 +1826,11 @@ body .social a {
     width: 300px;
     margin: 10vw auto;
     text-align: center;
+    .img {
+      img {
+        margin: 40px auto;
+      }
+    }
     .url {
       color: #E841AF;
       margin: -15px 0 10px;
@@ -2513,7 +2520,7 @@ li {
       }
       &.languageOption {
         text-align: center !important;
-        margin-left: -15px;
+        // margin-left: -15px;
         img {
           top: 5px !important;
         }
@@ -3043,23 +3050,26 @@ li {
     padding-bottom: 0;
   }
   input {
-    height: 28px;
+    height: 30px;
     background: white;
     border: 1px solid #cfcfcf;
     width: 200px;
     text-indent: 10px;
     font-size: 16px;
-    margin-top: 9px;
+    border-radius: 0;
+    margin: 10px 0;
+    padding: 4px 0;
   }
   .button {
     padding: 0 20px;
-    line-height: 32px;
+    line-height: 38px;
     margin-bottom: 0;
-    height: 33px;
+    height: 38px;
     border-radius: 0;
     box-shadow: none;
     width: 47px;
     text-shadow: none;
+    border: 1px solid #ec4b81;
   }
 }
 
@@ -3076,23 +3086,21 @@ li {
                0 0 150px #ec4b81;
   }
   to {
-    text-shadow: 0 0 2px #fff,
-               0 0 4px #fff,
-               0 0 6px #fff,
-               0 0 8px #ec4b81,
-               0 0 12px #ec4b81,
-               0 0 16px #ec4b81,
-               0 0 20px #ec4b81,
-               0 0 30px #ec4b81;
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #fff,
+               0 0 30px #ec4b81,
+               0 0 40px #ec4b81,
+               0 0 50px #ec4b81,
+               0 0 60px #ec4b81,
+               0 0 70px #ec4b81;
   }
 }
 
 .breath,.lybutton,.et-slide .scoins{
-  &:hover {
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate; 
-  }
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate; 
 }
 
 .modal {

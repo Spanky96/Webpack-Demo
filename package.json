@@ -3,7 +3,7 @@
     "dev": "webpack-dev-server --env development --config build/webpack.common.conf.js",
     "build": "webpack --env production --config build/webpack.common.conf.js"
   },
-"devDependencies": {
+  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -19,6 +19,7 @@
     "html-withimg-loader": "^0.1.16",
     "image-loader": "^0.0.1",
     "jquery": "^3.3.1",
+    "mini-css-extract-plugin": "^0.6.0",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.9.2",
     "postcss-import": "^11.0.0",

@@ -27,14 +27,16 @@ const generateConfig = env => {
     const cssLoader = {
       loader: 'css-loader',
       options: {
-        sourceMap: options.sourceMap
+        sourceMap: options.sourceMap,
+        minimize: true
       }
     }
 
     const postcssLoader = {
       loader: 'postcss-loader',
       options: {
-        sourceMap: options.sourceMap
+        sourceMap: options.sourceMap,
+        minimize: true
       }
     }
 
@@ -46,7 +48,8 @@ const generateConfig = env => {
         useLoaders.push({
           loader: loader + '-loader',
           options: Object.assign({}, loaderOptions, {
-            sourceMap: options.sourceMap
+            sourceMap: options.sourceMap,
+            minimize: true
           })
         })
       }
