@@ -5,7 +5,7 @@
 # 2. 克隆代码至本地
 git clone git@github.com:Spanky96/Webpack-Demo.git
 # 3. 进入项目目录
-cd GPA
+cd Webpack-Demo
 # 4. 安装依赖
 npm install
 # 5. 运行项目
