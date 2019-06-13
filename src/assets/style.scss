@@ -1,0 +1,103 @@
+.main-content {
+  width: 1000px;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  padding: 20px 100px;
+  .chart-title {
+    margin: 10px auto;
+    color: #686868;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }  
+  .single-chart {
+    margin-bottom: 30px;
+  }
+  .flex-chart {
+    display: flex;
+    >div {
+      flex: 1;
+    }
+  }
+}
+.yymstyle {
+  border-collapse: collapse;
+  thead {
+    th {
+      background: #568db5;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      border: 2px solid white;
+    }
+  }
+  .ti {
+    color: #568db5;
+  }
+  .total {
+    text-align: center;
+    padding: 20px;
+  }
+  tbody {
+    tr {
+      &:nth-child(2n) {
+        background: #f7f7f7;
+      }
+    }
+    td {
+      padding: 5px 10px 5px 20px;
+      text-align: left;
+      border: 1px solid #cfcfcf;
+    }
+  }
+}
+
+.ana-top {
+  margin: 10px;
+  border: 1px solid #f0ecec;
+  border-radius: 5px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  >.item {
+    &:not(:last-child) {
+      border-right: 1px solid #f0ecec;
+    }
+    width: 33%;
+    text-align: center;
+    line-height: 25px;
+    .num {
+      color: #ff4700;
+      font-size: 18px;
+    }
+  }
+}
+.ana-chart {
+  margin: 10px;
+  border: 1px solid #f0ecec;
+  border-radius: 5px;
+  height: 300px;
+  #chart {
+    width: 100%;
+    height: 100%;
+  }
+}
+.ana-bottom {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  >.item {
+    border-radius: 5px;
+    background: #3385cf;
+    color: white;
+    width: 16%;
+    margin-bottom: 10px;
+    height: 44px;
+    text-align: center;
+    line-height: 24px;
+    padding: 10px 0;
+    .num {
+      font-size: 18px;
+    }
+  }
+}

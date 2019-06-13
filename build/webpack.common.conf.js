@@ -152,9 +152,9 @@ const generateConfig = env => {
             filename: n + ".html",
             template: path.resolve(__dirname, "../src/pages/" + n, n + ".html"),
             chunks: [n],
-            minify: {
-              collapseWhitespace: true
-            }
+            // minify: {
+            //   collapseWhitespace: true
+            // }
           });
       }),
       new CopyWebpackPlugin([
@@ -164,9 +164,9 @@ const generateConfig = env => {
           ignore: ['.*']
         }
       ]),
-      new webpack.ProvidePlugin({
-        $: "jquery"
-      })
+      // new webpack.ProvidePlugin({
+      //   $: "jquery"
+      // })
     ]
   };
 };

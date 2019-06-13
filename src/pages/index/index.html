@@ -1,15 +1,598 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="description">
-    <meta name="keywords">
-    <link rel="bookmark" href="static/favicon.ico"/>
-    <title>hmj</title>
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="description">
+  <meta name="keywords">
+  <link rel="bookmark" href="static/favicon.ico" />
+  <title>hmj</title>
+  <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+</head>
+
+<body>
+  <h3>page1</h3>
+  <div class="main-content">
+    <div class="single-chart">
+      <div class="chart-title">实有房屋统计</div>
+      <div id="chart-syfwtj" style="width: 1000px; height: 250px;"></div>
+    </div>
+    <div class="flex-chart">
+      <div class="flex-item-chart">
+        <div class="chart-title">按房屋用途统计</div>
+        <div id="chart-yttj" style="width: 500px; height: 350px;"></div>
+      </div>
+      <div class="flex-item-chart">
+        <div class="chart-title">按房屋类型统计</div>
+        <div id="chart-fwlxtj" style="width: 500px; height: 350px;"></div>
+      </div>
+    </div>
+  </div>
+  <h3>page2</h3>
+  <div class="main-content">
+    <div class="single-chart">
+      <div class="chart-title">实有单位统计</div>
+      <div id="chart-sydwtj" style="width: 1000px; height: 250px;"></div>
+    </div>
+    <div class="flex-chart">
+      <div class="flex-item-chart">
+        <div class="chart-title">按单位重点等级统计</div>
+        <div id="chart-zddjtj" style="width: 500px; height: 350px;"></div>
+      </div>
+      <div class="flex-item-chart">
+        <div class="chart-title">按单位类别统计</div>
+        <div id="chart-dwlxtj" style="width: 500px; height: 350px;"></div>
+      </div>
+    </div>
+  </div>
+  <h3>page3</h3>
+  <div class="main-content">
+    <div class="chart-title">消息签收反馈统计</div>
+    <table class="yymstyle">
+      <thead>
+      <tr>
+        <th rowspan="2">派出所</th>
+        <th colspan="4">消息任务</th>
+        <th colspan="4">通知通告</th>
+        <th colspan="4">工作要求</th>
+      </tr>
+      <tr>
+        <th>已签收</th>
+        <th>未签收</th>
+        <th>已反馈</th>
+        <th>未反馈</th>
+        <th>已签收</th>
+        <th>未签收</th>
+        <th>已反馈</th>
+        <th>未反馈</th>
+        <th>已签收</th>
+        <th>未签收</th>
+        <th>已反馈</th>
+        <th>未反馈</th>
+      </tr>
+    </thead>
+      <tbody>
+          <tr>
+            <td class="ti">君山派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">城中派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">要塞派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">西郊派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">滨江派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">城东派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">云亭派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">南闸派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">利港派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">夏港派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">申港派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">璜土派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">青阳派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">月城派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">徐霞客派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">峭岐派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">周庄派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">三房巷派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">华士派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">华西派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">新桥派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">长泾派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">顾山派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">祝塘派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="ti">江阴水上派出所</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="total">总计</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>page4</h3>
+  <div class="main-content">
+    <div class="chart-title">社区民警统计</div>
+    <div class="ana-top">
+      <div class="item">本月上门走访<br>家次<span class="num">87</span>家</div>
+      <div class="item">本月签收<br>工作量<span class="num">27</span>件</div>
+      <div class="item">本月完成<br>工作量<span class="num">0</span>件</div>
+    </div>
+    <div class="ana-chart">
+      <div id="chart"></div>
+    </div>
+    <div class="ana-bottom">
+      <div class="item">常住人口<br><span class="num">123</span>人</div>
+      <div class="item">暂住人口<br><span class="num">34</span>人</div>
+      <div class="item">寄住人口<br><span class="num">87</span>人</div>
+      <div class="item">境外人员<br><span class="num">1</span>人</div>
+      <div class="item">特殊人员<br><span class="num">3</span>人</div>
+    </div>
+  </div>
+</body>
+<script>
+// 实有房屋统计
+var chartSyfwtj = echarts.init(document.getElementById('chart-syfwtj'));
+var optionChartSyfwtj = {
+    color: ['#5aa3ff'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {
+            type : 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '35%',
+        top: '5%'
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ["君山派出所", "城中派出所", "要塞派出所", "西郊派出所", "滨江派出所", "城东派出所", "云亭派出所", "南闸派出所", "利港派出所", "夏港派出所", "申港派出所", "璜土派出所", "青阳派出所", "月城派出所", "徐霞客派出所", "峭岐派出所", "周庄派出所", "三房巷派出所", "华士派出所", "华西派出所", "新桥派出所", "长泾派出所", "顾山派出所", "祝塘派出所", "江阴水上派出所"].map(function(n) {
+                return n.split('').join('\n');
+            }),
+            axisTick: {
+                show: false
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisTick: {
+                show: false
+            }
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '40%',
+            data: [10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220,10, 52, 200, 334],
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    color: '#ff6a10'
+                }
+            }
+        }
+    ]
+};
+chartSyfwtj.setOption(optionChartSyfwtj);
+
+// 实有单位统计
+var chartSydwtj = echarts.init(document.getElementById('chart-sydwtj'));
+var optionChartSydwtj = {
+    color: ['#5aa3ff'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {
+            type : 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '35%',
+        top: '5%'
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ["君山派出所", "城中派出所", "要塞派出所", "西郊派出所", "滨江派出所", "城东派出所", "云亭派出所", "南闸派出所", "利港派出所", "夏港派出所", "申港派出所", "璜土派出所", "青阳派出所", "月城派出所", "徐霞客派出所", "峭岐派出所", "周庄派出所", "三房巷派出所", "华士派出所", "华西派出所", "新桥派出所", "长泾派出所", "顾山派出所", "祝塘派出所", "江阴水上派出所"].map(function(n) {
+                return n.split('').join('\n');
+            }),
+            axisTick: {
+                show: false
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisTick: {
+                show: false
+            }
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '40%',
+            data: [10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220,10, 52, 200, 334],
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    color: '#ff6a10'
+                }
+            }
+        }
+    ]
+};
+chartSydwtj.setOption(optionChartSydwtj);
+</script>
 </html>
