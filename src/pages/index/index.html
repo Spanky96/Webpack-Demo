@@ -9,37 +9,45 @@
   <meta name="description">
   <meta name="keywords">
   <link rel="bookmark" href="static/favicon.ico" />
-  <title>hmj</title>
+  <title>大赛画册</title>
 </head>
 
 <body>
-  <div id="djcenter">
-    <div class="mainleft">
-      <div class="left-info"></div>
-      <div class="extra-right">
-        <div class="top-base">
-          <div class="title">基本信心</div>
-          <div class="list-info">
-            <div class="item">党组织：<span class="bl">89</span>个</div>
-            <div class="item">党总支部：<span class="bl">89</span>个</div>
-            <div class="item">党员：<span class="bl">89</span>人</div>
-            <div class="item">困难党员：<span class="bl">89</span>人</div>
-            <div class="item">优秀党员：<span class="bl">89</span>人</div>
-            <div class="item">流动党员：<span class="bl">89</span>人</div>
-            <div class="item">处分党员：<span class="bl">89</span>人</div>
-          </div>
-        </div>
-        <div class="btn-extra">
-          <div class="block">
-            <span>中心党组织</span></div>
-          <div class="block">
-              <span>党员中心户</span></div>
-        </div>
+  <div id="dshc">
+    <div class="menu-bar">
+      <div class="title">2018中国国际家用<br>纺织产品设计大赛</div>
+      <div class="btns">
+        <div class="item active">0/0</div>
+        <div class="item">1/2</div>
+        <div class="item">3/4</div>
+        <div class="item">5/6</div>
+        <div class="item">7/8</div>
+        <div class="item">9/10</div>
+        <div class="item">11/12</div>
+        <div class="item">13/14</div>
+        <div class="item">15/16</div>
       </div>
     </div>
-    <div class="rightbtn"><span>返回首页</span></div>
+    <div class="mainframe">
+      <div class="img">
+        <img src="~@assets/imgs/dshc/page0:0.png" alt="" class="ct">
+      </div>
+      <div class="topModal"></div>
+      <div class="ym">0/0</div>
+    </div>
   </div>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>
+$(function () {
+  $('.menu-bar .btns .item').each(function (i) {
+    $(this).css('left', (i * 103) + 'px');
+    $(this).click(function () {
+      $('.menu-bar .btns .item').removeClass('active');
+      $(this).addClass('active');
+    })
+  })
+});
+
 </script>
 </html>
