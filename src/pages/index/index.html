@@ -17,37 +17,74 @@
     <div class="menu-bar">
       <div class="title">2018中国国际家用<br>纺织产品设计大赛</div>
       <div class="btns">
-        <div class="item active">0/0</div>
-        <div class="item">1/2</div>
-        <div class="item">3/4</div>
-        <div class="item">5/6</div>
-        <div class="item">7/8</div>
-        <div class="item">9/10</div>
-        <div class="item">11/12</div>
-        <div class="item">13/14</div>
-        <div class="item">15/16</div>
+        <div class="item active" page-no='1'>0/0</div>
+        <div class="item" page-no='2'>1/2</div>
+        <div class="item" page-no='3'>3/4</div>
+        <div class="item" page-no='4'>5/6</div>
+        <div class="item" page-no='5'>7/8</div>
+        <div class="item" page-no='6'>9/10</div>
+        <div class="item" page-no='7'>11/12</div>
+        <div class="item" page-no='8'>13/14</div>
+        <div class="item" page-no='9'>15/16</div>
       </div>
     </div>
     <div class="mainframe">
-      <div class="img">
-        <img src="~@assets/imgs/dshc/page0:0.png" alt="" class="ct">
+      <div class="flipbook-viewport">
+        <div class="container">
+          <div class="flipbook">
+            <div class="page" style="background-image:url(/static/imgs/dshc/page0:0.png);""></div>
+            <div class="double" style="background-image:url(/static/imgs/dshc/page0:0.png)" page-tag="0/0"></div>
+            <div class="double" page-tag="1/2">1/2</div>
+            <div class="double" page-tag="3/4">3/4</div>
+            <div class="double" page-tag="5/6">5/6</div>
+            <div class="double" page-tag="7/8">7/8</div>
+            <div class="double" page-tag="9/10">9/10</div>
+            <div class="double" page-tag="11/12">11/12</div>
+            <div class="double" page-tag="13/14">13/14</div>
+            <div class="double" page-tag="15/16">15/16</div>
+            <div class="page" style="background-image:url(/static/imgs/dshc/page0:0.png);"></div>
+          </div>
+        </div>
       </div>
-      <div class="topModal"></div>
       <div class="ym">0/0</div>
     </div>
   </div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./static/js/jquery.min.1.7.js"></script>
+<script src="./static/js/modernizr.2.5.3.min.js"></script>
+<script src="./static/js/turn.min.js"></script>
+<!-- <script src="./static/js/turn.html4.min.js"></script> -->
+<script src="./static/js/scissor.min.js"></script>
 <script>
-$(function () {
-  $('.menu-bar .btns .item').each(function (i) {
-    $(this).css('left', (i * 103) + 'px');
-    $(this).click(function () {
-      $('.menu-bar .btns .item').removeClass('active');
-      $(this).addClass('active');
-    })
-  })
-});
+  function loadApp() {
+    var flipbook = $('.flipbook');
+    if (flipbook.width() == 0 || flipbook.height() == 0) {
+      setTimeout(loadApp, 10);
+      return;
+    }
+    $('.flipbook .double').scissor();
+    $('.flipbook').turn({
+      elevation: 50,
+      gradients: true,
+      autoCenter: true,
+      page: 2
+    });
+  }
+
+  $(function () {
+    $('.menu-bar .btns .item').each(function (i) {
+      $(this).css('left', (i * 103) + 'px');
+      $(this).click(function () {
+        $('.menu-bar .btns .item').removeClass('active');
+        $(this).addClass('active');
+        var pageNo = parseInt($(this).attr('page-no')) * 2;
+        $('.flipbook').turn('page', pageNo);
+        $('.ym').text($(this).text());
+      })
+    });
+    loadApp();
+  });
 
 </script>
+
 </html>
