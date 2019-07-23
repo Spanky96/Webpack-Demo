@@ -1,0 +1,19 @@
+[{
+  "location": "Haiti region",
+  "lat": "18.443",
+  "lng": "-72.571",
+  "pophot": "7.0",
+  "description": "这是一条测试数据"
+}, {
+  "location": "Southern Qinghai, China",
+  "lat": "33.165",
+  "lng": "96.548",
+  "pophot": "6.9",
+  "description": "这是一条测试数据"
+}, {
+  "location": "Japan",
+  "lat": "38.297",
+  "lng": "142.373",
+  "pophot": "9.0",
+  "description": "这是一条测试数据"
+}]

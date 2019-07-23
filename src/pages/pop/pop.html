@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="description">
+  <meta name="keywords">
+  <link rel="bookmark" href="static/favicon.ico" />
+  <title>pop家纺趋势指数</title>
+</head>
+
+<body>
+  <div id="popjfqs">
+    <div class="title-bar"><span>pop家纺趋势指数</span></div>
+    <div class="mainbody">
+      <div class="leftnum">
+        <div class="item">
+          <div class="title">已浮华行业趋势总量</div>
+          <div class="numberdw">
+            <div class="number" id="number1"></div>
+            <div class="dw">万家</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">服务企业数</div>
+          <div class="numberdw">
+            <div class="number" id="number2"></div>
+            <div class="dw">家</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">页浏览页面</div>
+          <div class="numberdw">
+            <div class="number" id="number3"></div>
+            <div class="dw">万家</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="title">月活跃用户</div>
+          <div class="numberdw">
+            <div class="number" id="number4"></div>
+            <div class="dw">家</div>
+          </div>
+        </div>
+      </div>
+      <div class="rightcharts">
+        <div class="topmap">
+          <div class="title">展会分布</div>
+          <div id="mountNode"></div>
+        </div>
+        <div class="bottomchart">
+          <div class="chart-item">
+            <div class="chartItem">
+              <div class="title">软装布艺发布量</div>
+              <div id="chart-rzbyfbl" style="width: 630px;height: 160px;margin-left: 10px;"></div>
+            </div>
+            <div class="chartItem">
+              <div class="title">床上用品发布量</div>
+              <div id="chart-csypfbl" style="width: 630px;height: 160px;margin-left: 10px;"></div>
+            </div>
+          </div>
+          <div class="chart-item">
+            <div class="chartItem">
+              <div class="title">跟踪品牌数</div>
+            </div>
+            <div class="flex-box">
+              <div class="numItem">
+                <div class="title">总<br>数</div>
+                <div class="num">100</div>
+              </div>
+              <div class="numItem">
+                <div class="title">最新<br>更新</div>
+                <div class="num">123</div>
+              </div>
+            </div>
+            <div class="tagcloud fl" style="visibility: visible; position: relative; min-height: 240px; min-width: 500px;">
+              <a href="#">数据整合</a>
+              <a href="#">REST数据消费</a>
+              <a href="#">品牌历称</a>
+              <a href="#">服务监控</a>
+              <a href="#">分布式处理引擎</a>
+              <a href="#">数据整合</a>
+              <a href="#">REST数据消费</a>
+              <a href="#">品牌历称</a>
+              <a href="#">服务监控</a>
+              <a href="#">分布式处理引擎</a>
+              <a href="#">数据整合</a>
+              <a href="#">REST数据消费</a>
+              <a href="#">品牌历称</a>
+              <a href="#">服务监控</a>
+              <a href="#">分布式处理引擎</a>
+              <a href="#">数据整合</a>
+              <a href="#">REST数据消费</a>
+              <a href="#">品牌历称</a>
+              <a href="#">服务监控</a>
+              <a href="#">分布式处理引擎</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./static/js/g2.min.js"></script>
+<script src="./static/js/data-set.min.js"></script>
+<script src="./static/js/jquery.min.1.7.js"></script>
+<script src="./static/js/animateNumber.js"></script>
+<script src="./static/js/tagcloud.js"></script>
+<script>
+  var mapRender = function () {
+    $.getJSON('./static/data/world.geo.json', function(mapData) {
+      $.getJSON('./static/data/popdata.json', function(data) {
+        var chart = new G2.Chart({
+          container: 'mountNode',
+          width: 1316,
+          height: 344,
+          padding: [20, 80, 5, 80]
+        });
+        // force sync scales
+        chart.scale({
+          x: {
+            sync: true,
+            nice: false
+          },
+          y: {
+            sync: true,
+            nice: false
+          }
+        });
+        chart.coord().reflect();
+        chart.legend(false);
+        chart.axis(false);
+
+        // style the tooltip
+        chart.tooltip({
+          showTitle: false,
+          containerTpl: '<div class="g2-tooltip"><table class="g2-tooltip-list"></table></div>',
+          itemTpl: '<tr data-index="{index}"><td style="padding:5px;background-color:#545454;color:#fff">{name}</td><td style="padding:5px;background-color:#fff;color:#000;">{value}</td></tr>',
+          'g2-tooltip': {
+            borderRadius: '2px',
+            backgroundColor: '#22bfe7',
+            padding: 0,
+            border: '1px solid #fff'
+          }
+        });
+        // data set
+        var ds = new DataSet();
+
+        // draw the map
+        var dv = ds.createView('back').source(mapData, {
+          type: 'GeoJSON'
+        }).transform({
+          type: 'geo.projection',
+          projection: 'geoMercator',
+          as: ['x', 'y', 'centroidX', 'centroidY']
+        });
+        var bgView = chart.view();
+        bgView.source(dv);
+        bgView.tooltip(false);
+        bgView.polygon().position('x*y').style({
+          fill: '#22bfe7',
+          stroke: '#22bfe7',
+          lineWidth: 0
+        });
+
+        var userData = ds.createView().source(data);
+        userData.transform({
+          type: 'map',
+          callback: function callback(obj) {
+            var projectedCoord = dv.geoProjectPosition([obj.lng * 1, obj.lat * 1], 'geoMercator');
+            obj.x = projectedCoord[0];
+            obj.y = projectedCoord[1];
+            obj.pophot = obj.pophot * 1;
+            return obj;
+          }
+        });
+        var pointView = chart.view();
+        pointView.source(userData);
+        pointView.point().position('x*y').size('pophot', [10, 30]).shape('circle').opacity(0.8).color('#fef11f').tooltip('location*lat*lng*pophot*description');
+
+        chart.render();
+      });
+    });
+  };
+  
+  var rzbyfblChartRender = function () {
+    var data = [{
+      item: '餐厅类',
+      count: 40,
+      percent: 0.4
+    }, {
+      item: '厨房类',
+      count: 21,
+      percent: 0.21
+    }, {
+      item: '卫生间类',
+      count: 17,
+      percent: 0.17
+    }, {
+      item: '装饰与陈设类',
+      count: 13,
+      percent: 0.13
+    }, {
+      item: '垫子类',
+      count: 9,
+      percent: 0.09
+    }];
+    var chart = new G2.Chart({
+      container: 'chart-rzbyfbl',
+      forceFit: true,
+      width: 630,
+      height: 160,
+      padding: [5, 80, 5, 40]
+    });
+    chart.source(data, {
+      percent: {
+        formatter: function formatter(val) {
+          val = val * 100 + '%';
+          return val;
+        }
+      }
+    });
+    chart.coord('theta', {
+      radius: 0.8,
+      innerRadius: 0.6
+    });
+    chart.legend({
+      position: 'right',
+      offsetY: -20,
+      offsetX: -80,
+      textStyle: {
+        fontSize: 14,
+        fill: '#fff'
+      }
+    });
+    chart.tooltip({
+      showTitle: false,
+      itemTpl: '<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
+    });
+    var interval = chart.intervalStack().position('percent').color('item').label('percent', {
+      formatter: function formatter(val, item) {
+        return item.point.item + ': ' + val;
+      },
+      textStyle: function (val, val2) {
+        return {
+          fontSize: 14,
+          fill: val2.color
+        }
+      }
+    }).tooltip('item*count', function(item, count) {
+      return {
+        name: item,
+        value: count
+      };
+    });
+    chart.render();
+  };
+
+  var csypfblChartRender = function () {
+    var data = [{
+      item: '餐厅类',
+      count: 40,
+      percent: 0.4
+    }, {
+      item: '厨房类',
+      count: 21,
+      percent: 0.21
+    }, {
+      item: '卫生间类',
+      count: 17,
+      percent: 0.17
+    }, {
+      item: '装饰与陈设类',
+      count: 13,
+      percent: 0.13
+    }, {
+      item: '垫子类',
+      count: 9,
+      percent: 0.09
+    }];
+    var chart = new G2.Chart({
+      container: 'chart-csypfbl',
+      forceFit: true,
+      width: 630,
+      height: 160,
+      padding: [5, 80, 5, 40]
+    });
+    chart.source(data, {
+      percent: {
+        formatter: function formatter(val) {
+          val = val * 100 + '%';
+          return val;
+        }
+      }
+    });
+    chart.coord('theta', {
+      radius: 0.8,
+      innerRadius: 0.6
+    });
+    chart.legend({
+      position: 'right',
+      offsetY: -20,
+      offsetX: -80,
+      textStyle: {
+        fontSize: 14,
+        fill: '#fff'
+      }
+    });
+    chart.tooltip({
+      showTitle: false,
+      itemTpl: '<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
+    });
+    var interval = chart.intervalStack().position('percent').color('item').label('percent', {
+      formatter: function formatter(val, item) {
+        return item.point.item + ': ' + val;
+      },
+      textStyle: function (val, val2) {
+        return {
+          fontSize: 14,
+          fill: val2.color
+        }
+      }
+    }).tooltip('item*count', function(item, count) {
+      return {
+        name: item,
+        value: count
+      };
+    });
+    chart.render();
+  };
+
+  $(function () {
+    $("#number1").animateNumber({ number: 100 }, 500);
+    $("#number2").animateNumber({ number: 2000 }, 1000);
+    $("#number3").animateNumber({ number: 150 }, 500);
+    $("#number4").animateNumber({ number: 10000 }, 1500);
+    mapRender();
+    rzbyfblChartRender();
+    csypfblChartRender();
+    $('.tagcloud a').each(function () {
+      $(this).css('font-size', (Math.random() * 2.5) + 'rem');
+      $(this).css('color',  '#' + Math.floor(Math.random( ) * 0xFFFFFF).toString(16));
+    });
+    tagcloud({
+        selector: ".tagcloud",  //元素选择器
+        radius: 80,         //滚动半径, 单位px
+        mspeed: "normal",   //滚动最大速度, 取值: slow, normal(默认), fast
+        ispeed: "normal",   //滚动初速度, 取值: slow, normal(默认), fast
+        direction: -80,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+        keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+    });
+  });
+
+</script>
+
+</html>

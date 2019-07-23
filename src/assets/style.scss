@@ -17,99 +17,6 @@ select {
   outline: none;
 }
 
-#hgjyh {
-  background: url(./imgs/hgjyh/bj.png);
-  overflow: hidden;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-
-  .menu-bar {
-    width: 1235px;
-    height: 60px;
-    margin: 20px auto;
-    display: flex;
-
-    .item {
-      background: url('./imgs/hgjyh/menu.png') no-repeat;
-      background-size: 100% 100%;
-      width: 300px;
-      color: #82e5fe;
-      font-size: 20px;
-      text-indent: 20px;
-      line-height: 50px;
-      cursor: pointer;
-
-      &.active {
-        font-size: 24px;
-        background: url('./imgs/hgjyh/amenu.png') no-repeat;
-        background-size: 100% 100%;
-        text-indent: 30px;
-        color: white;
-        text-shadow: 1px 1px 19px #ffffff90;
-        line-height: 60px;
-      }
-    }
-  }
-
-  .mainframe {
-    background: url('./imgs/hgjyh/dk1.png');
-    width: 1235px;
-    height: 560px;
-    background-size: 100% 100%;
-    margin: 20px auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    .content {
-      .title {
-        margin-bottom: 20px;
-      }
-      height: 460px;
-      overflow-y: scroll;
-      color: #2aa1b8;
-      width: 440px;
-      line-height: 24px;
-    }
-    .photo-body {
-      width: 730px;
-      height: 480px;
-      background: url('./imgs/hgjyh/bg1.png');
-      background-size: 100% 100%;
-      display: flex;
-      align-items: center;
-      .lefts {
-        width: 150px;
-        margin: auto 10px auto 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 408px;
-        .item {
-          width: 100%;
-          height: 95px;
-          border: 1px solid #4471c2;
-          cursor: pointer;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-      .right-main {
-        width: 530px;
-        height: 408px;
-        border: 1px solid #4471c2;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -128,4 +35,150 @@ select {
   border-radius: 5px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
   background-color: #2aa1b8;
+}
+
+#popjfqs {
+  background: url(/static/imgs/cjdp/popbg.jpg);
+  overflow: hidden;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  .title-bar {
+    background: url(/static/imgs/cjdp/titlebg.png);
+    width: 1108px;
+    height: 67px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 67px;
+    span {
+      font-size: 27px;
+      background: linear-gradient(to bottom, #fff, cyan);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+  .mainbody {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1700px;
+    .leftnum {
+      background: url(/static/imgs/cjdp/pop-1.png);
+      width: 342px; height: 838px;
+      >.item {
+        margin: 20px 20px 40px;
+        .title {
+          color: #fff;
+          font-weight: bolder;
+          font-size: 24px;
+        }
+        .numberdw {
+          display: flex;
+          margin-top: 5px;
+          .number {
+            background: url(/static/imgs/cjdp/pop-4-5px.png);
+            font-family: monospace;
+            text-indent: 0.9rem;
+            color: #fff;
+            font-size: 44px;
+            letter-spacing: 1.7rem;
+            background-repeat-y: no-repeat;
+            background-size: 54px 52px;
+          }
+          .dw {
+            background: #0c1747;
+            color: #fff;
+            font-size: 18px;
+            margin-left: -10px;
+            display: inline-block;
+            padding-top: 30px;
+          }
+        }
+
+      }
+    }
+    .rightcharts {
+      margin-left: 20px;
+      flex-grow: 1;
+      max-width: 1316px;
+      height: 838px;
+      .topmap {
+        background: url(/static/imgs/cjdp/pop-2.png);
+        height: 364px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin-bottom: 20px;
+        position: relative;
+        #mountNode {
+          width: 1316px;
+          height: 344px;
+        }
+        .title {
+          position: absolute;
+          background: url(/static/imgs/cjdp/pop-5.png);
+          top: 0;
+          left: 40px;
+          width: 40px; height: 190px;
+          color: #fff;
+          font-weight: bolder;
+          font-size: 24px;
+          text-align: center;
+          padding-top: 10px;
+        }
+      }
+      .bottomchart {
+        display: flex;
+        justify-content: space-between;
+        .chart-item {
+          flex: 1;
+          max-width: 648px;
+          height: 458px;
+          background: url(/static/imgs/cjdp/pop-3.png);
+          background-size: 100% 100%;
+          .chartItem {
+            .title {
+              color: #fff;
+              font-weight: bolder;
+              font-size: 24px;
+              margin: 20px 0 0 20px; 
+            }
+          }
+          .flex-box {
+            display: flex;
+            margin: 20px auto;
+            justify-content: space-around;
+            .numItem {
+              display: flex;
+              align-items: center;
+              .title {
+                color: #fff;
+                font-weight: bolder;
+                font-size: 18px;
+                margin-right: 10px;
+              }
+              .num {
+                width: 184px;
+                height: 56px;
+                color: #fff;
+                font-weight: bolder;
+                font-size: 32px;
+                line-height: 56px;
+                text-align: center;
+                background: url(/static/imgs/cjdp/pop-6.png)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.tagcloud {
+  width: 650px;
+  height: 280px;
+  margin: 10px auto;
+  overflow: hidden;
+  margin-left: 40px;
+  a {
+    text-decoration:none
+  }
 }
