@@ -1,388 +1,391 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-size: 14px;
-  background: #F3F3F3;
+	font-size: 14px;
+	background: #F3F3F3;
 }
 
 input {
-  border: none;
-  outline: none;
+	border: none;
+	outline: none;
 }
 
 select {
-  outline: none;
+	outline: none;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+	width: 8px;
+	height: 8px;
 }
 
 /*定义滚动条轨道
  内阴影+圆角*/
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
 }
 
 /*定义滑块
  内阴影+圆角*/
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-  background-color: #2aa1b8;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+	background-color: #2aa1b8;
 }
 
 #popjfqs {
-  background: url(/static/imgs/cjdp/popbg.jpg);
-  overflow: hidden;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+	background: url(/static/imgs/cjdp/popbg.jpg);
+	overflow: hidden;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 
-  .title-bar {
-    background: url(/static/imgs/cjdp/titlebg.png);
-    width: 1108px;
-    height: 67px;
-    margin: 20px auto;
-    text-align: center;
-    line-height: 67px;
+	.title-bar {
+		background: url(/static/imgs/cjdp/titlebg.png);
+		width: 1108px;
+		height: 67px;
+		margin: 20px auto;
+		text-align: center;
+		line-height: 67px;
 
-    span {
-      font-size: 27px;
-      background: linear-gradient(to bottom, #fff, cyan);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-  }
+		span {
+			font-size: 27px;
+			background: linear-gradient(to bottom, #fff, cyan);
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+	}
 
-  .mainbody {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1700px;
+	.mainbody {
+		display: flex;
+		margin: 0 auto;
+		max-width: 1700px;
 
-    .leftnum {
-      background: url(/static/imgs/cjdp/pop-1.png);
-      width: 342px;
-      height: 838px;
+		.leftnum {
+			background: url(/static/imgs/cjdp/pop-1.png);
+			width: 342px;
+			height: 838px;
 
-      >.item {
-        margin: 20px 20px 40px;
+			>.item {
+				margin: 20px 20px 40px;
 
-        .title {
-          color: #fff;
-          font-weight: bolder;
-          font-size: 24px;
-        }
+				.title {
+					color: #fff;
+					font-weight: bolder;
+					font-size: 24px;
+				}
 
-        .numberdw {
-          display: flex;
-          margin-top: 5px;
+				.numberdw {
+					display: flex;
+					margin-top: 5px;
 
-          .number {
-            background: url(/static/imgs/cjdp/pop-4-5px.png);
-            font-family: monospace;
-            text-indent: 0.9rem;
-            color: #fff;
-            font-size: 44px;
-            letter-spacing: 1.7rem;
-            background-repeat-y: no-repeat;
-            background-size: 54px 52px;
-          }
+					.number {
+						background: url(/static/imgs/cjdp/pop-4-5px.png);
+						// font-family: monospace;
+						text-indent: 0.9rem;
+						color: #fff;
+						font-size: 44px;
+						letter-spacing: 1.7rem;
+						background-repeat-y: no-repeat;
+						background-size: 54px 52px;
+					}
 
-          .dw {
-            background: #0c1747;
-            color: #fff;
-            font-size: 18px;
-            margin-left: -10px;
-            display: inline-block;
-            padding-top: 30px;
-          }
-        }
+					.dw {
+						background: #0c1747;
+						color: #fff;
+						font-size: 18px;
+						margin-left: -10px;
+						display: inline-block;
+						padding-top: 30px;
+					}
+				}
 
-      }
-    }
+			}
+		}
 
-    .rightcharts {
-      margin-left: 20px;
-      flex-grow: 1;
-      max-width: 1316px;
-      height: 838px;
+		.rightcharts {
+			margin-left: 20px;
+			flex-grow: 1;
+			max-width: 1316px;
+			height: 838px;
 
-      .topmap {
-        background: url(/static/imgs/cjdp/pop-2.png);
-        height: 364px;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        margin-bottom: 20px;
-        position: relative;
+			.topmap {
+				background: url(/static/imgs/cjdp/pop-2.png);
+				height: 364px;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				margin-bottom: 20px;
+				position: relative;
 
-        #mountNode {
-          width: 1316px;
-          height: 344px;
-        }
+				#mountNode {
+					width: 1316px;
+					height: 344px;
+				}
 
-        .title {
-          position: absolute;
-          background: url(/static/imgs/cjdp/pop-5.png);
-          top: 0;
-          left: 40px;
-          width: 40px;
-          height: 190px;
-          color: #fff;
-          font-weight: bolder;
-          font-size: 24px;
-          text-align: center;
-          padding-top: 10px;
-        }
-      }
+				.title {
+					position: absolute;
+					background: url(/static/imgs/cjdp/pop-5.png);
+					top: 0;
+					left: 40px;
+					width: 40px;
+					height: 190px;
+					color: #fff;
+					font-weight: bolder;
+					font-size: 24px;
+					text-align: center;
+					padding-top: 10px;
+				}
+			}
 
-      .bottomchart {
-        display: flex;
-        justify-content: space-between;
+			.bottomchart {
+				display: flex;
+				justify-content: space-between;
 
-        .chart-item {
-          flex: 1;
-          max-width: 648px;
-          height: 458px;
-          background: url(/static/imgs/cjdp/pop-3.png);
-          background-size: 100% 100%;
+				.chart-item {
+					flex: 1;
+					max-width: 648px;
+					height: 458px;
+					background: url(/static/imgs/cjdp/pop-3.png);
+					background-size: 100% 100%;
 
-          .chartItem {
-            .title {
-              color: #fff;
-              font-weight: bolder;
-              font-size: 24px;
-              margin: 20px 0 0 20px;
-            }
-          }
+					.chartItem {
+						.title {
+							color: #fff;
+							font-weight: bolder;
+							font-size: 24px;
+							margin: 20px 0 0 20px;
+						}
+					}
 
-          .flex-box {
-            display: flex;
-            margin: 20px auto;
-            justify-content: space-around;
+					.flex-box {
+						display: flex;
+						margin: 20px auto;
+						justify-content: space-around;
 
-            .numItem {
-              display: flex;
-              align-items: center;
+						.numItem {
+							display: flex;
+							align-items: center;
 
-              .title {
-                color: #fff;
-                font-weight: bolder;
-                font-size: 18px;
-                margin-right: 10px;
-              }
+							.title {
+								color: #fff;
+								font-weight: bolder;
+								font-size: 18px;
+								margin-right: 10px;
+							}
 
-              .num {
-                width: 184px;
-                height: 56px;
-                color: #fff;
-                font-weight: bolder;
-                font-size: 32px;
-                line-height: 56px;
-                text-align: center;
-                background: url(/static/imgs/cjdp/pop-6.png)
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+							.num {
+								width: 184px;
+								height: 56px;
+								color: #fff;
+								font-weight: bolder;
+								font-size: 32px;
+								line-height: 56px;
+								text-align: center;
+								background: url(/static/imgs/cjdp/pop-6.png)
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .tagcloud {
-  width: 650px;
-  height: 280px;
-  margin: 10px auto;
-  overflow: hidden;
-  margin-left: 40px;
+	width: 650px;
+	height: 280px;
+	margin: 10px auto;
+	overflow: hidden;
+	margin-left: 40px;
 
-  a {
-    text-decoration: none
-  }
+	a {
+		text-decoration: none
+	}
 }
 
 #lxqsxq {
-  background: url(/static/imgs/cjdp/popbg.jpg);
-  overflow: hidden;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  overflow: scroll;
+	background: url(/static/imgs/cjdp/popbg.jpg);
+	overflow: hidden;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow: scroll;
 
-  .bodyframe {
-    margin: 20px;
-    display: flex;
+	.bodyframe {
+		margin: 20px;
+		display: flex;
 
-    .leftii {
-      border: 2px solid #08bae7;
-      width: 1160px;
-      padding: 20px;
-    }
+		.leftii {
+			border: 2px solid #08bae7;
+			width: 1160px;
+			padding: 20px;
+		}
 
-    .rightii {
-      position: fixed;
-      left: 1240px;
-      top: 20px;
-      background: url(/static/imgs/cjdp/lx-7.png);
-      width: 372px;
-      height: 906px;
+		.rightii {
+			position: fixed;
+			left: 1240px;
+			top: 20px;
+			background: url(/static/imgs/cjdp/lx-7.png);
+			width: 372px;
+			height: 906px;
 
-      .btn1 {
-        width: 70px;
-        height: 42px;
-        float: left;
-        margin-left: 20px;
-        cursor: pointer;
-      }
+			.btn1 {
+				width: 70px;
+				height: 42px;
+				float: left;
+				margin-left: 20px;
+				cursor: pointer;
+			}
 
-      .btn2 {
-        width: 70px;
-        height: 42px;
-        float: left;
-        margin-left: 10px;
-        cursor: pointer;
-      }
+			.btn2 {
+				width: 70px;
+				height: 42px;
+				float: left;
+				margin-left: 10px;
+				cursor: pointer;
+			}
 
-      .btn3 {
-        width: 150px;
-        height: 42px;
-        float: left;
-        margin-left: 10px;
-        cursor: pointer;
-      }
+			.btn3 {
+				width: 150px;
+				height: 42px;
+				float: left;
+				margin-left: 10px;
+				cursor: pointer;
+			}
 
-      .content {
-        margin-top: 80px;
-        padding: 20px;
-        height: 762px;
-        overflow-y: scroll;
+			.content {
+				margin-top: 80px;
+				padding: 20px;
+				height: 762px;
+				overflow-y: scroll;
 
-        .title {
-          font-size: 24px;
-          font-weight: bold;
-          color: #fff;
-          margin-bottom: 30px;
-        }
+				.title {
+					font-size: 24px;
+					font-weight: bold;
+					color: #fff;
+					margin-bottom: 30px;
+				}
 
-        .text {
-          font-size: 16px;
-          color: #fff;
-          line-height: 32px;
-          text-indent: 2rem;
-        }
-      }
-    }
-  }
+				.text {
+					font-size: 16px;
+					color: #fff;
+					line-height: 32px;
+					text-indent: 2rem;
+				}
+			}
+		}
+	}
 }
 
 #lxqslb {
-  background: url(/static/imgs/cjdp/popbg.jpg);
-  overflow: hidden;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  overflow: scroll;
+	background: url(/static/imgs/cjdp/popbg.jpg);
+	overflow: hidden;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow: scroll;
 
-  .title-bar {
-    background: url(/static/imgs/cjdp/titlebg.png);
-    width: 1108px;
-    height: 67px;
-    margin: 20px auto;
-    text-align: center;
-    line-height: 67px;
+	.title-bar {
+		background: url(/static/imgs/cjdp/titlebg.png);
+		width: 1108px;
+		height: 67px;
+		margin: 20px auto;
+		text-align: center;
+		line-height: 67px;
 
-    span {
-      font-size: 27px;
-      background: linear-gradient(to bottom, #fff, cyan);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-  }
+		span {
+			font-size: 27px;
+			background: linear-gradient(to bottom, #fff, cyan);
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+	}
 }
 
 #certify {
-  position: relative;
-  width: 1200px;
-  margin: 0 auto
+	position: relative;
+	width: 1200px;
+	margin: 60px auto
 }
 
 #certify .swiper-container {
-  padding-bottom: 60px
+	padding-bottom: 60px
 }
 
 #certify .swiper-slide {
-  width: 520px;
-  height: 408px;
-  background: #fff;
-  box-shadow: 0 8px 30px #ddd
-}
+	width: 520px;
+	height: 328px;
+	background: url(/static/imgs/cjdp/lx-3.png);
+	background-size: 100% 100%;
+	border-radius: 50px 50px 0 0;
 
-#certify .swiper-slide img {
-  display: block
-}
+	img {
+		display: block;
+		width: calc(100% - 30px);
+		height: calc(100% - 60px);
+		margin: 50px auto;
+	}
 
-#certify .swiper-slide p {
-  line-height: 98px;
-  padding-top: 0;
-  text-align: center;
-  color: #636363;
-  font-size: 1.1em;
-  margin: 0
+	.description {
+		display: none;
+		background: url(/static/imgs/cjdp/lx-5.png);
+		position: absolute;
+		bottom: -54px;
+		left: 30px;
+		width: 460px;
+		height: 80px;
+
+		p {
+			color: #fff;
+			padding: 10px 20px;
+		}
+	}
+
+	&.swiper-slide-active .description {
+		display: block;
+	}
+
 }
 
 #certify .swiper-pagination {
-  width: 100%;
-  bottom: 20px
+	width: 100%;
+	bottom: 20px
 }
 
 #certify .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 5px;
-  border: 3px solid #fff;
-  background-color: #d5d5d5;
-  width: 10px;
-  height: 10px;
-  opacity: 1
+	margin: 0 5px;
+	border: 3px solid #fff;
+	background-color: #d5d5d5;
+	width: 10px;
+	height: 10px;
+	opacity: 1
 }
 
 #certify .swiper-pagination-bullets .swiper-pagination-bullet-active {
-  border: 3px solid #00aadc;
-  background-color: #fff
+	border: 3px solid #00aadc;
+	background-color: #fff
 }
 
 #certify .swiper-button-prev {
-  left: -30px;
-  width: 45px;
-  height: 45px;
-  background: url(http://www.jq22.com/demo/swiperlbt201810230049/images/wm_button_icon.png) no-repeat;
-  background-position: 0 0;
-  background-size: 100%
-}
-
-#certify .swiper-button-prev:hover {
-  background-position: 0 -46px;
-  background-size: 100%
+	left: 20px;
+	width: 45px;
+	height: 45px;
+	background: url(/static/imgs/cjdp/lx-1.png) no-repeat;
+	background-position: 0 0;
+	background-size: 100%
 }
 
 #certify .swiper-button-next {
-  right: -30px;
-  width: 45px;
-  height: 45px;
-  background: url(http://www.jq22.com/demo/swiperlbt201810230049/images/wm_button_icon.png) no-repeat;
-  background-position: 0 -93px;
-  background-size: 100%
+	right: 30px;
+	width: 45px;
+	height: 45px;
+	background: url(/static/imgs/cjdp/lx-2.png) no-repeat;
+	background-size: 100%
 }
-
-#certify .swiper-button-next:hover {
-  background-position: 0 -139px;
-  background-size: 100%
-}
-
 
 
 
@@ -397,7 +400,7 @@ select {
  *
  * Released on: November 7, 2017
  */
- .swiper-container {
+.swiper-container {
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
@@ -1068,4 +1071,44 @@ button.swiper-pagination-bullet {
 
 .swiper-container-coverflow .swiper-wrapper {
 	-ms-perspective: 1200px
+}
+
+.zf29_3d {
+	zoom: 1.3;
+    width: 670px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transform: perspective(0) rotatex(85deg) rotatey(0deg);
+}
+
+.zf29 {
+	animation: zhuan1 80s infinite linear;
+	width: 670px;
+	height: 670px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(/static/imgs/cjdp/016-2.png) no-repeat center;
+	background-size: 100% 100%;
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+
+.zf29.on {
+	animation: zhuan1 .5s infinite linear;
+}
+
+.zf29-bg {
+	position: absolute;
+	z-index: -3;
+}
+
+@keyframes zhuan1 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
 }
