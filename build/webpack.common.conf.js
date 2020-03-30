@@ -161,6 +161,20 @@ const generateConfig = env => {
           ignore: ['.*']
         }
       ]),
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, '../general_10'),
+          to: 'general_10',
+          ignore: ['.*']
+        }
+      ]),
+      new CopyWebpackPlugin([
+        {
+          from: path.resolve(__dirname, '../scripts'),
+          to: 'scripts',
+          ignore: ['.*']
+        }
+      ]),
       new webpack.ProvidePlugin({
         $: "jquery"
       })

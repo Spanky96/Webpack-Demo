@@ -1,0 +1,209 @@
+A{color: #000000; text-decoration: none;}
+A:hover {color: #ff0000; text-decoration: none}
+
+A.title {text-decoration:underline;color:#FFFFFF;}
+A.title:hover {text-decoration:none;color:#FFFFFF;}
+
+A.email {text-decoration:underline;color:#000000;}
+A.email:hover {text-decoration:underline;color:#009AFF;}
+
+.bodycolor1 { background: #264989}
+.bodycolor { background: #eeeeee; cursor:default}
+
+body {background: #eeeeee;font-size: 12px;border: none; scrollbar-arrow-color:buttonshadow; scrollbar-base-color:buttonshadow;
+scrollbar-darkshadow-color:#ffffff; scrollbar-face-color:#EEEAEB; scrollbar-highlight-color:#FBFDFC; scrollbar-shadow-color:buttonshadow}
+td{font-size: 12px}
+
+.Head {
+	background-color: #cccccc;
+	border-bottom: buttonface 1px solid;
+	border-left: buttonface 1px solid;
+	border-right: buttonface 1px solid;
+	border-top: buttonface 1px solid;
+	cursor: hand;
+	padding: 0px;
+	margin: 1px;
+	height: 15px;
+}
+.HeadUp
+{
+	background-color: buttonface;
+	border-left: #ffffff 1px solid;
+	border-top: #ffffff 1px solid;
+	border-right: #808080 1px solid;
+	border-bottom: #808080 1px solid;
+	cursor: hand;
+	padding: 0px;
+	margin: 0px 1px 1px 0px;
+}
+.HeadDown
+{
+	background-color: buttonface;
+	border-left: buttonface 1px solid;
+	border-top: buttonface 1px solid;
+	border-right: #808080 1px solid;
+	border-bottom: #808080 1px solid;
+	cursor: hand;
+	padding: 0px;
+	margin: 1px 0px 0px 1px;
+}
+
+.Btn {
+	background-color: #eeeeee;
+	border:				1px solid #eeeeee;
+	cursor: hand;
+	padding: 0px 1px 1px 0px;
+	margin: 1px;
+	height: 22px;
+	filter:gray Alpha(Opacity=75);
+	vertical-align: bottom;
+}
+.Btn2 {
+	background-color: #eeeeee;
+	border-bottom: #cccccc 1px solid;
+	border-left: #cccccc 1px solid;
+	border-right: #cccccc 1px solid;
+	border-top: #cccccc 1px solid;
+	cursor: hand;
+	padding: 0px 1px 1px 0px;
+	margin: 1px;
+	height: 22px;
+	vertical-align: bottom;
+}
+.BtnUp
+{
+	background-color: #eeeeee;
+	border-bottom: buttonshadow 1px solid;
+	border-left: buttonhighlight 1px solid;
+	border-right: buttonshadow 1px solid;
+	border-top: buttonhighlight 1px solid;
+	cursor: hand;
+	padding: 0px 1px 1px 0px;
+	margin: 1px;
+	height: 22px;
+	filter:
+	vertical-align;
+	vertical-align: bottom;
+: bottom;
+}
+.BtnDown
+{
+	background-color: #eeeeee;
+	border-bottom: buttonhighlight 1px solid;
+	border-left: buttonshadow 1px solid;
+	border-right: buttonhighlight 1px solid;
+	border-top: buttonshadow 1px solid;
+	cursor: hand;
+	padding: 1px 0px 0px 1px;
+	margin: 1px;
+	height: 22px;
+	filter:
+	vertical-align;
+	vertical-align: bottom;
+: bottom;
+}
+
+.TBSep
+{
+    border-left: buttonshadow 1px solid;
+    border-right: buttonhighlight 1px solid;
+	top: 0px;
+    WIDTH: 1px;
+	margin: 2px;
+	height: 18px;
+}
+.TBHandle
+{
+	background-color: #cccccc;
+	border-left: buttonhighlight 1px solid;
+	border-right: buttonshadow 1px solid;
+	border-top: buttonhighlight 1px solid;
+	top: 0px;
+	WIDTH: 3px;
+	margin: 2px;
+	height: 18px;
+}
+.VSep{
+    font-size: 0px;
+	height: 3px;
+}
+.VSep1{
+    font-size: 0px;
+	height: 1px;
+}
+.VSep10{
+    font-size: 0px;
+	height: 10px;
+}
+.VSep8{
+    font-size: 0px;
+	height: 8px;
+}
+p {
+  font-size: 12px;
+  margin: 2px;
+  padding: 0px;
+  vertical-align: middle;
+}
+.TVSep
+{
+    border-top: buttonshadow 1px solid;
+    border-bottom: buttonhighlight 1px solid;
+    font-size: 0px;
+	left: 0px;
+    width: 100%;
+	margin: 2px;
+	height: 0px;
+}
+
+
+.rightMenuOver{
+	color: #FFFFFF;
+	background-color: #000080;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.rightMenuOut{
+	color: #000000;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.disable{
+	color:#808080;filter:dropshadow(color=#FFFFFF,offx=1,offy=1,positive=1);
+}
+.invisible{
+	display:none;
+}
+.c1	{background-color:#BCD8F0}
+.c2	{background-color:#DAE5EF}
+.c3	{background-color:#eeeeee}
+.c4	{background-color:#ffffff}
+
+input.underbar			{background:white;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+input.underbar_inactive		{background:transparent;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+input.box			{border-style:solid;border-width:1;border-color:buttonshadow}
+input.box_inactive		{background:transparent;border-style:solid;border-width:1}
+input.noborder			{background:white;border-style:solid;border-width:0}
+input.noborder_inactive		{background:transparent;border-style:solid;border-width:0}
+input.boxCheck			{border-style:solid;border-width:1;border-color:#ee0000}
+input.output			{background:white;border-style:solid;border-width:0}
+
+textarea.underbar		{word-wrap:break-word;word-break:break-all;background:white;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+textarea.underbar_inactive	{word-wrap:break-word;word-break:break-all;background:transparent;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+textarea.box			{word-wrap:break-word;word-break:break-all;border-style:solid;border-width:1;border-color:buttonshadow}
+textarea.box_inactive		{word-wrap:break-word;word-break:break-all;background:transparent;border-style:solid;border-width:1}
+textarea.noborder		{word-wrap:break-word;word-break:break-all;background:white;border-style:solid;border-width:0}
+textarea.noborder_inactive	{word-wrap:break-word;word-break:break-all;background:transparent;border-style:solid;border-width:0}
+textarea.boxCheck			{word-wrap:break-word;word-break:break-all;border-style:solid;border-width:1;border-color:#ee0000}
+textarea.output		{background:white;border-style:solid;border-width:0}
+
+select.underbar			{background:white;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+select.underbar_inactive	{background:transparent;border-left-style:none;border-right-style:none;border-top-style:none;border-bottom-style:solid;border-bottom-width:1}
+select.box			{border-style:solid;border-width:1;border-color:buttonshadow}
+select.box_inactive		{background:transparent;border-style:solid;border-width:1}
+select.noborder			{background:white;border-style:solid;border-width:0}
+select.noborder_inactive	{background:transparent;border-style:solid;border-width:0}
+select.boxCheck			{border-style:solid;border-width:1;border-color:#ee0000}
+
+.normal		{color: #000000;background-color: #ffffff}
+.highlight	{color: #ffffff;background-color: #000080}

@@ -1,0 +1,108 @@
+a{color:black;text-decoration: none;}
+a:hover {color: blue;text-decoration: underline}
+
+A.top {text-decoration:none;color:#000000;}
+A.top:hover {text-decoration:none;color:#009AFF;}
+
+.webfx-tree-container {
+	margin: 0px;
+	padding: 0px;
+	font: icon;
+	white-space: nowrap;
+}
+
+.webfx-tree-item {
+	padding: 0px;
+	margin: 0px;
+	color: WindowText;
+	white-space: nowrap;
+	height:22px;
+    font-size: 14px;
+}
+
+.webfx-tree-item a, .webfx-tree-item a:active, .webfx-tree-item a:hover {
+	margin-left: 3px;
+	padding: 1px 2px 1px 2px;
+	font-size: 14px;
+}
+
+.webfx-tree-item a {
+	color: #424443;
+	text-decoration: none;
+}
+
+.webfx-tree-item a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+.webfx-tree-item a:active {
+	background: highlight;
+	color: highlighttext;
+	text-decoration: none;
+}
+
+.webfx-tree-item img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+.webfx-tree-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.webfx-tree-item a.selected {
+	color: white;
+	background: #0066FF;
+}
+
+.webfx-tree-item a.selected-inactive {
+	color: white;
+	background: #0066FF;
+}
+
+.bodycolor { BACKGROUND: #cccccc; cursor:default}
+
+body { font-size: 12px; scrollbar-arrow-color:buttonshadow; scrollbar-base-color:buttonshadow;
+scrollbar-darkshadow-color:#ffffff; scrollbar-face-color:#EEEAEB; scrollbar-highlight-color:#FBFDFC; scrollbar-shadow-color:buttonshadow}
+td{
+	FONT-SIZE: 12px;
+	line-height: 120%;
+}
+.rightMenuOver{
+	COLOR: #FFFFFF;
+	background-color: #000080;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.rightMenuOut{
+	COLOR: #000000;
+	font-size: 12px;
+	padding: 0px 8px;
+}
+.disable{
+	color:#808080;filter:dropshadow(color=#FFFFFF,offx=1,offy=1,positive=1);
+}
+.VSep{
+    font-size: 0px;
+	height: 3px;
+}
+.TVSep
+{
+    BORDER-TOP: buttonshadow 1px solid;
+    BORDER-BOTTOM: buttonhighlight 1px solid;
+    font-size: 0px;
+	left: 0px;
+    width: 100%;
+	margin: 2px;
+	height: 0px;
+}
+
+.todayColor {
+	BACKGROUND-COLOR: aqua;
+	font-weight: bold;
+	text-decoration: blink;
+}
+.assignedColor {BACKGROUND-COLOR: #FFFFe0}
+.weekColor {BACKGROUND-COLOR: #cccccc}
