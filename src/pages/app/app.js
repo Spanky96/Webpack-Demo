@@ -1,3 +1,3 @@
 import $ from 'jquery';
-import '@assets/style/style.scss'
+import '@assets/style/style.css'
 console.log($);
